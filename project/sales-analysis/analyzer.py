@@ -1,0 +1,238 @@
+"""
+Sales Analysis Tool - Main Script
+
+This script orchestrates the complete sales analysis workflow:
+1. Load and validate data
+2. Clean and preprocess
+3. Perform analysis
+4. Generate visualizations
+5. Save results
+
+Usage:
+    python analyzer.py
+"""
+
+import logging
+import sys
+from datetime import datetime
+
+# Import our custom modules
+from config import (
+    SALES_FILE,
+    OUTPUT_DIR,
+    TOP_N_PRODUCTS,
+    LOG_FORMAT,
+    LOG_DATE_FORMAT,
+    LOG_LEVEL,
+)
+from data_loader import load_sales_data, clean_sales_data
+from helpers import format_currency, get_top_products, get_summary_stats
+from visualizer import create_dashboard
+
+# ============================================================================
+# LOGGING CONFIGURATION (Windows-Compatible)
+# ============================================================================
+
+# Create log file with timestamp
+log_file = OUTPUT_DIR / f"analysis_{datetime.now():%Y%m%d_%H%M%S}.log"
+
+# Configure file handler with UTF-8 encoding
+file_handler = logging.FileHandler(log_file, encoding="utf-8")
+file_handler.setLevel(LOG_LEVEL)
+file_handler.setFormatter(logging.Formatter(LOG_FORMAT, datefmt=LOG_DATE_FORMAT))
+
+# Configure console handler with UTF-8 encoding (Windows-compatible)
+console_handler = logging.StreamHandler(sys.stdout)
+console_handler.setLevel(LOG_LEVEL)
+console_handler.setFormatter(logging.Formatter(LOG_FORMAT, datefmt=LOG_DATE_FORMAT))
+
+# Set up root logger
+logging.basicConfig(level=LOG_LEVEL, handlers=[file_handler, console_handler])
+
+logger = logging.getLogger(__name__)
+
+# ============================================================================
+# ANALYSIS FUNCTIONS
+# ============================================================================
+
+
+def print_header(title: str, width: int = 60):
+    """Print formatted section header."""
+    print("\n" + "=" * width)
+    print(title.center(width))
+    print("=" * width)
+
+
+def print_analysis_results(df, product_stats):
+    """
+    Print formatted analysis results to console.
+
+    Args:
+        df: Complete sales data
+        product_stats: Aggregated product statistics
+    """
+    print_header("SALES ANALYSIS RESULTS")
+
+    # Get summary statistics
+    stats = get_summary_stats(df)
+
+    # Overall statistics
+    print(f"\n💰 Total Revenue: {format_currency(stats['total_revenue'])}")
+    print(f"📦 Total Items Sold: {stats['total_quantity']:,}")
+    print(f"📋 Total Transactions: {stats['total_transactions']:,}")
+    print(f"🏷️  Unique Products: {stats['unique_products']}")
+    print(f"💵 Average Transaction: {format_currency(stats['average_transaction'])}")
+    print(
+        f"📅 Date Range: {stats['date_range']['start']} to {stats['date_range']['end']}"
+    )
+
+    # Top products
+    print(f"\n🏆 Top {TOP_N_PRODUCTS} Products by Revenue:")
+    print("-" * 60)
+    print(f"{'Product':<20} {'Quantity':>10} {'Revenue':>15}")
+    print("-" * 60)
+
+    for product, row in product_stats.iterrows():
+        print(
+            f"{product:<20} {int(row['quantity']):>10,} {format_currency(row['total']):>15}"
+        )
+
+    print("=" * 60)
+
+
+def save_results(df, product_stats):
+    """
+    Save analysis results to CSV files.
+
+    Args:
+        df: Complete sales data
+        product_stats: Product statistics
+    """
+    logger.info("Saving results...")
+
+    # Save product statistics
+    stats_file = OUTPUT_DIR / "product_statistics.csv"
+    product_stats.to_csv(stats_file)
+    logger.info("Saved: %s", stats_file.name)
+
+    # Save detailed data
+    details_file = OUTPUT_DIR / "sales_details.csv"
+    df.to_csv(details_file, index=False)
+    logger.info("Saved: %s", details_file.name)
+
+    # Save summary statistics
+    stats = get_summary_stats(df)
+    summary_file = OUTPUT_DIR / "summary_statistics.txt"
+
+    with open(summary_file, "w", encoding="utf-8") as f:
+        f.write("SALES ANALYSIS SUMMARY\n")
+        f.write("=" * 60 + "\n\n")
+        f.write(f"Total Revenue: {format_currency(stats['total_revenue'])}\n")
+        f.write(f"Total Items Sold: {stats['total_quantity']:,}\n")
+        f.write(f"Total Transactions: {stats['total_transactions']:,}\n")
+        f.write(f"Unique Products: {stats['unique_products']}\n")
+        f.write(
+            f"Average Transaction: {format_currency(stats['average_transaction'])}\n"
+        )
+        f.write(
+            f"Date Range: {stats['date_range']['start']} to {stats['date_range']['end']}\n"
+        )
+
+    logger.info("Saved: %s", summary_file.name)
+
+
+def generate_final_summary(charts):
+    """
+    Print final summary of generated files.
+
+    Args:
+        charts: List of created chart paths
+    """
+    print_header("SUMMARY")
+
+    output_files = list(OUTPUT_DIR.glob("*"))
+    output_files = [f for f in output_files if f.is_file() and f.name != ".gitkeep"]
+
+    print(f"\n📁 Generated {len(output_files)} files in output/")
+    print("\nCharts:")
+    for chart in charts:
+        print(f"  📊 {chart.name}")
+
+    print("\nData Files:")
+    for file in output_files:
+        if file.suffix == ".csv":
+            print(f"  📄 {file.name}")
+
+    print("\nReports:")
+    for file in output_files:
+        if file.suffix in [".txt", ".log"]:
+            print(f"  📋 {file.name}")
+
+    print("\n✅ Analysis complete!")
+    print(f"📂 All files saved to: {OUTPUT_DIR}")
+    print("=" * 60)
+
+
+# ============================================================================
+# MAIN EXECUTION
+# ============================================================================
+
+
+def main():
+    """Main execution function."""
+    logger.info("=" * 60)
+    logger.info("Starting Sales Analysis Tool")
+    logger.info("=" * 60)
+
+    try:
+        # 1. Load data
+        logger.info("Step 1: Loading data")
+        df = load_sales_data(SALES_FILE)
+        logger.info("Loaded %d records", len(df))
+
+        # 2. Clean data
+        logger.info("Step 2: Cleaning data")
+        df = clean_sales_data(df)
+        logger.info("%d records after cleaning", len(df))
+
+        # 3. Analyze
+        logger.info("Step 3: Analyzing data")
+        product_stats = get_top_products(df, TOP_N_PRODUCTS)
+        logger.info("Analyzed %d top products", len(product_stats))
+
+        # 4. Print results
+        logger.info("Step 4: Displaying results")
+        print_analysis_results(df, product_stats)
+
+        # 5. Create visualizations
+        logger.info("Step 5: Creating visualizations")
+        charts = create_dashboard(df, product_stats, OUTPUT_DIR)
+        logger.info("Created %d charts", len(charts))
+
+        # 6. Save results
+        logger.info("Step 6: Saving results")
+        save_results(df, product_stats)
+
+        # 7. Final summary
+        generate_final_summary(charts)
+
+        logger.info("Log file: %s", log_file)
+        logger.info("=" * 60)
+
+    except FileNotFoundError as e:
+        logger.error("File Error: %s", e)
+        logger.error("Make sure data/sales.csv exists!")
+        print("\nTip: Check that your data file is in the correct location:")
+        print(f"   Expected: {SALES_FILE}")
+
+    except ValueError as e:
+        logger.error("Data Validation Error: %s", e)
+        print("\nTip: Check your CSV file format and required columns")
+
+    except Exception as e:
+        logger.exception("Unexpected Error: %s", e)
+        raise
+
+
+if __name__ == "__main__":
+    main()
