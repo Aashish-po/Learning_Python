@@ -14,6 +14,7 @@
 This repository documents my journey learning Python programming, from fundamental concepts to advanced topics like API integration, data analysis, and building real-world applications. Each section includes detailed notes, code examples, and practical exercises.
 
 **Perfect for:**
+
 - Beginners starting their Python journey
 - Intermediate developers looking to solidify fundamentals
 - Anyone interested in data science and API integration
@@ -26,6 +27,7 @@ This repository documents my journey learning Python programming, from fundament
 ### ✅ Completed Topics
 
 #### **Phase 1: Python Fundamentals**
+
 - [x] Variables and Data Types
 - [x] Operators and Expressions
 - [x] Control Flow (if/else, loops)
@@ -35,6 +37,7 @@ This repository documents my journey learning Python programming, from fundament
 - [x] Lists, Tuples, Dictionaries, Sets
 
 #### **Phase 2: Modules & Packages**
+
 - [x] Import Patterns
 - [x] Built-in Modules (`datetime`, `os`, `json`, `random`)
 - [x] Installing External Packages (`pip`)
@@ -42,6 +45,7 @@ This repository documents my journey learning Python programming, from fundament
 - [x] requirements.txt Management
 
 #### **Phase 3: External Tools & APIs**
+
 - [x] Working with APIs (`requests` library)
 - [x] JSON Data Handling
 - [x] Error Handling for API Calls
@@ -49,6 +53,7 @@ This repository documents my journey learning Python programming, from fundament
 - [x] HTTP Methods (GET, POST, PUT, DELETE)
 
 #### **Phase 4: Data Analysis**
+
 - [x] Pandas DataFrames
 - [x] Data Processing and Cleaning
 - [x] Statistical Analysis
@@ -56,12 +61,14 @@ This repository documents my journey learning Python programming, from fundament
 - [x] Working with CSV Files
 
 ### 🚧 In Progress
+
 - [ ] Object-Oriented Programming (OOP)
 - [ ] File I/O Operations
 - [ ] Regular Expressions
 - [ ] Lambda Functions & Functional Programming
 
 ### 📋 Upcoming Topics
+
 - [ ] Web Scraping (`BeautifulSoup`, `Selenium`)
 - [ ] Database Integration (`SQLite`, `PostgreSQL`)
 - [ ] Web Development (`Flask`, `FastAPI`)
@@ -72,6 +79,7 @@ This repository documents my journey learning Python programming, from fundament
 ---
 
 ## 📂 Repository Structure
+
 ```
 python-learning/
 ├── 01-fundamentals/
@@ -108,6 +116,7 @@ python-learning/
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 ```bash
 Python 3.8 or higher
 pip (Python package manager)
@@ -116,12 +125,14 @@ pip (Python package manager)
 ### Setup
 
 1. **Clone the repository**
+
 ```bash
 git clone https://github.com/yourusername/python-learning.git
 cd python-learning
 ```
 
-2. **Create virtual environment**
+1. **Create virtual environment**
+
 ```bash
 # Windows
 python -m venv venv
@@ -132,12 +143,14 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-3. **Install dependencies**
+1. **Install dependencies**
+
 ```bash
 pip install -r requirements.txt
 ```
 
-4. **Run examples**
+1. **Run examples**
+
 ```bash
 # Try the weather API example
 python 03-apis/weather_api.py
@@ -151,6 +164,7 @@ python 04-data-analysis/weather_analysis.py
 ## 🎓 Key Concepts & Examples
 
 ### Functions with Return Values
+
 ```python
 def calculate_average(numbers):
     """Calculate average of a list of numbers."""
@@ -162,6 +176,7 @@ print(f"Average: {avg}")  # Average: 87.6
 ```
 
 ### API Integration
+
 ```python
 import requests
 
@@ -181,6 +196,7 @@ def get_weather(city, api_key):
 ```
 
 ### Data Analysis with Pandas
+
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -202,11 +218,13 @@ plt.savefig('temperature_chart.png')
 ## 🛠️ Projects
 
 ### 1. Weather Dashboard
+
 **Description:** Fetches 7-day weather data for multiple cities, analyzes trends, and generates visualizations.
 
 **Technologies:** `requests`, `pandas`, `matplotlib`
 
 **Features:**
+
 - Historical weather data retrieval
 - Multi-city comparison
 - Temperature trend analysis
@@ -218,11 +236,13 @@ plt.savefig('temperature_chart.png')
 ---
 
 ### 2. GitHub Repository Analyzer
+
 **Description:** Analyzes GitHub user repositories and generates statistics.
 
 **Technologies:** `requests`, `pandas`, `matplotlib`
 
 **Features:**
+
 - Repository statistics
 - Language distribution
 - Star/fork analysis
@@ -234,11 +254,13 @@ plt.savefig('temperature_chart.png')
 ---
 
 ### 3. Cryptocurrency Price Tracker
+
 **Description:** Tracks cryptocurrency prices and generates price trend reports.
 
 **Technologies:** `requests`, `pandas`, `matplotlib`
 
 **Features:**
+
 - Real-time price fetching
 - Historical data analysis
 - Price change calculations
@@ -252,21 +274,25 @@ plt.savefig('temperature_chart.png')
 ## 📚 Learning Resources
 
 ### Documentation
+
 - [Official Python Documentation](https://docs.python.org/3/)
 - [Python Tutorial](https://docs.python.org/3/tutorial/)
 - [PEP 8 Style Guide](https://pep8.org/)
 
 ### Libraries
+
 - [Requests Documentation](https://requests.readthedocs.io/)
 - [Pandas Documentation](https://pandas.pydata.org/docs/)
 - [Matplotlib Documentation](https://matplotlib.org/stable/contents.html)
 
 ### Practice
+
 - [LeetCode](https://leetcode.com/)
 - [HackerRank Python](https://www.hackerrank.com/domains/python)
 - [Python Exercises](https://www.w3resource.com/python-exercises/)
 
 ### Communities
+
 - [r/learnpython](https://www.reddit.com/r/learnpython/)
 - [Python Discord](https://pythondiscord.com/)
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/python)
@@ -276,6 +302,7 @@ plt.savefig('temperature_chart.png')
 ## 💡 Best Practices I've Learned
 
 ### 1. Always Use Virtual Environments
+
 ```bash
 # Create isolated environment for each project
 python -m venv venv
@@ -284,6 +311,7 @@ pip install -r requirements.txt
 ```
 
 ### 2. Error Handling for APIs
+
 ```python
 try:
     response = requests.get(url, timeout=10)
@@ -295,6 +323,7 @@ except requests.exceptions.RequestException as e:
 ```
 
 ### 3. Secure API Keys
+
 ```python
 # Use environment variables
 import os
@@ -305,6 +334,7 @@ API_KEY = os.getenv('API_KEY')  # Never hardcode!
 ```
 
 ### 4. Code Organization
+
 ```python
 def main():
     """Main execution function."""
@@ -333,6 +363,7 @@ While this is a personal learning repository, suggestions and improvements are w
 ## 📝 Notes & Tips
 
 ### Common Pitfalls to Avoid
+
 - ❌ Installing packages without activating virtual environment
 - ❌ Using `from module import *` (causes naming conflicts)
 - ❌ Hardcoding API keys in code
@@ -340,6 +371,7 @@ While this is a personal learning repository, suggestions and improvements are w
 - ❌ Forgetting to convert date strings to datetime objects
 
 ### Helpful Debugging Tips
+
 - Use `print()` statements liberally
 - Check data types with `type(variable)`
 - Inspect DataFrames with `df.head()`, `df.info()`
@@ -363,12 +395,14 @@ While this is a personal learning repository, suggestions and improvements are w
 ## 🎯 Goals
 
 ### Short-term (1-2 months)
+
 - [ ] Complete Object-Oriented Programming
 - [ ] Build 5 complete projects
 - [ ] Contribute to open-source Python project
 - [ ] Master data analysis with pandas
 
 ### Long-term (3-6 months)
+
 - [ ] Learn web development with Flask/FastAPI
 - [ ] Explore machine learning basics
 - [ ] Build full-stack web application
@@ -380,7 +414,7 @@ While this is a personal learning repository, suggestions and improvements are w
 
 - **GitHub:** [@yourusername](https://github.com/yourusername)
 - **LeetCode:** [@yourusername](https://leetcode.com/yourusername)
-- **Email:** your.email@example.com
+- **Email:** <your.email@example.com>
 
 ---
 
@@ -407,7 +441,7 @@ March 20, 2026
 
 <div align="center">
 
-### ⭐ Star this repo if you find it helpful!
+### ⭐ Star this repo if you find it helpful
 
 **Happy Coding! 🚀**
 
