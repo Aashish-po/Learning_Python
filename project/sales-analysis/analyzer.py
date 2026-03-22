@@ -1,17 +1,3 @@
-"""
-Sales Analysis Tool - Main Script
-
-This script orchestrates the complete sales analysis workflow:
-1. Load and validate data
-2. Clean and preprocess
-3. Perform analysis
-4. Generate visualizations
-5. Save results
-
-Usage:
-    python analyzer.py
-"""
-
 import logging
 import sys
 from datetime import datetime
@@ -29,9 +15,6 @@ from data_loader import load_sales_data, clean_sales_data
 from helpers import format_currency, get_top_products, get_summary_stats
 from visualizer import create_dashboard
 
-# ============================================================================
-# LOGGING CONFIGURATION (Windows-Compatible)
-# ============================================================================
 
 # Create log file with timestamp
 log_file = OUTPUT_DIR / f"analysis_{datetime.now():%Y%m%d_%H%M%S}.log"
@@ -51,11 +34,8 @@ logging.basicConfig(level=LOG_LEVEL, handlers=[file_handler, console_handler])
 
 logger = logging.getLogger(__name__)
 
-# ============================================================================
-# ANALYSIS FUNCTIONS
-# ============================================================================
 
-
+# Utility functions for printing results
 def print_header(title: str, width: int = 60):
     """Print formatted section header."""
     print("\n" + "=" * width)
@@ -63,14 +43,9 @@ def print_header(title: str, width: int = 60):
     print("=" * width)
 
 
+# Function to print analysis results
 def print_analysis_results(df, product_stats):
-    """
-    Print formatted analysis results to console.
 
-    Args:
-        df: Complete sales data
-        product_stats: Aggregated product statistics
-    """
     print_header("SALES ANALYSIS RESULTS")
 
     # Get summary statistics
@@ -100,14 +75,9 @@ def print_analysis_results(df, product_stats):
     print("=" * 60)
 
 
+# Function to save results to files
 def save_results(df, product_stats):
-    """
-    Save analysis results to CSV files.
 
-    Args:
-        df: Complete sales data
-        product_stats: Product statistics
-    """
     logger.info("Saving results...")
 
     # Save product statistics
@@ -141,13 +111,8 @@ def save_results(df, product_stats):
     logger.info("Saved: %s", summary_file.name)
 
 
+# Function to generate final summary of generated files
 def generate_final_summary(charts):
-    """
-    Print final summary of generated files.
-
-    Args:
-        charts: List of created chart paths
-    """
     print_header("SUMMARY")
 
     output_files = list(OUTPUT_DIR.glob("*"))
@@ -173,13 +138,8 @@ def generate_final_summary(charts):
     print("=" * 60)
 
 
-# ============================================================================
-# MAIN EXECUTION
-# ============================================================================
-
-
+# Main execution function
 def main():
-    """Main execution function."""
     logger.info("=" * 60)
     logger.info("Starting Sales Analysis Tool")
     logger.info("=" * 60)
