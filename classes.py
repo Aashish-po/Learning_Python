@@ -416,8 +416,11 @@ class BankAccount:
         return f"BankAccount('{self.owner}', '{self.account_number}', {self.balance})"
 
 
-# %%
+# Test it
 account = BankAccount("Aashish Poudel", "NB-001", 10000)
 print(account)
 
-# %%
+account.deposit(5000)
+account.withdraw(2000)
+account.apply_interest()
+account.print_statement()
