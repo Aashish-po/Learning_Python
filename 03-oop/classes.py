@@ -2,6 +2,8 @@ from datetime import datetime
 
 
 class Product:
+    """A basic representation of an item for sale."""
+
     def __init__(self, name, price, category):
         self.name = name
         self.price = price
@@ -19,11 +21,14 @@ print(mouse.category)  # Should print: Accessories
 
 # Define the SalesTransaction class here
 class SalesTransaction:
+    """Records a single sale event and calculates the total amount."""
+
     def __init__(self, product_name, quantity, price, date):
         self.product_name = product_name
         self.quantity = quantity
         self.price = price
         self.date = date
+        # Derived attribute calculated at instantiation
         self.total = quantity * price
 
 
@@ -37,6 +42,8 @@ print(transaction2.total)  # Should print: 149.95
 
 # Define the SalesRecord class here
 class SalesRecord:
+    """An enhanced sale record with better string representations for debugging and logging."""
+
     def __init__(self, date, product, quantity, price):
         self.date = date
         self.product = product
@@ -83,6 +90,8 @@ print(f"Laptop sales: {len(laptop_sales)}")
 
 # Define the OpenAIConfig class here
 class OpenAIConfig:
+    """Manages configuration settings for OpenAI API interactions."""
+
     def __init__(self, api_key, model="gpt-3.5-turbo", max_tokens=100, temperature=0.7):
         self.api_key = api_key
         self.model = model
@@ -102,9 +111,7 @@ class OpenAIConfig:
 # Different configurations for different use cases
 dev_config = OpenAIConfig(api_key="sk-dev-key", max_tokens=50)
 
-prod_config = OpenAIConfig(
-    api_key="sk-prod-key", model="gpt-4", max_tokens=1000, temperature=0.5
-)
+prod_config = OpenAIConfig(api_key="sk-prod-key", model="gpt-4", max_tokens=1000, temperature=0.5)
 
 quick_config = OpenAIConfig("sk-quick-key")  # All defaults
 
@@ -122,6 +129,8 @@ configs = [dev_config, prod_config, quick_config]
 
 
 class WeatherData:
+    """Stores weather metrics for a city and provides analysis methods."""
+
     AVERAGE_TEMP = 20.0  # Class variable
 
     def __init__(self, city, temperature, humidity, date):
@@ -163,6 +172,8 @@ print(f"Is it hot in Pokhara? {weather2.is_hot()}")  # False
 # Each account has its own data, so we can create multiple accounts without them interfering with each other.
 # Define the BankAccount class here
 class BankAccount1:
+    """Simple account model highlighting independent instance attributes."""
+
     def __init__(self, owner, balance=0):
         self.owner = owner  # Each account has its own owner
         self.balance = balance  # Each account has its own balance
@@ -192,11 +203,11 @@ class BankAccount2:
     total_accounts = 0
 
     def __init__(self, owner, balance=0):
-        # Instance attributes - unique to each account
+        # Instance attributes - UNIQUE to each object instance
         self.owner = owner
         self.balance = balance
 
-        # Increment class attribute
+        # Increment SHARED class attribute when a new instance is created
         BankAccount2.total_accounts += 1
 
 
@@ -218,6 +229,8 @@ print(BankAccount2.interest_rate)  # 0.05 (same)
 
 # This class demonstrates instance methods that operate on instance attributes (like result) and return values for chaining.
 class Calculator:
+    """A simple calculator that supports method chaining by returning 'self'."""
+
     def __init__(self):
         self.result = 0
 
@@ -314,7 +327,7 @@ class BankAccount:
         self.balance = balance
         self.transaction_history = []
 
-        # Record initial deposit
+        # Automatically record opening balance as the first transaction
         if balance > 0:
             self._record_transaction("Initial Deposit", balance)
 
@@ -347,12 +360,8 @@ class BankAccount:
 
         # Check minimum balance requirement
         if self.balance - amount < self.min_balance:
-            print(
-                f"❌ Insufficient funds. Minimum balance Rs. {self.min_balance:,.2f} required"
-            )
-            print(
-                f"   Available for withdrawal: Rs. {self.balance - self.min_balance:,.2f}"
-            )
+            print(f"❌ Insufficient funds. Minimum balance Rs. {self.min_balance:,.2f} required")
+            print(f"   Available for withdrawal: Rs. {self.balance - self.min_balance:,.2f}")
             return False
 
         self.balance -= amount
@@ -361,7 +370,7 @@ class BankAccount:
         return True
 
     def get_balance(self):
-        """Get current balance."""
+        """Returns the current numeric balance."""
         return self.balance
 
     def calculate_interest(self):
@@ -374,13 +383,11 @@ class BankAccount:
         interest = self.calculate_interest()
         self.balance += interest
         self._record_transaction("Interest", interest)
-        print(
-            f"✅ Interest applied: Rs. {interest:,.2f}. New balance: Rs. {self.balance:,.2f}"
-        )
+        print(f"✅ Interest applied: Rs. {interest:,.2f}. New balance: Rs. {self.balance:,.2f}")
         return interest
 
     def get_transaction_history(self):
-        """Get all transactions."""
+        """Returns the list of transaction dictionaries."""
         return self.transaction_history
 
     def print_statement(self):

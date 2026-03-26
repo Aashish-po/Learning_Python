@@ -1,13 +1,15 @@
 # 1: Create a function that prints your name 3 times
 def print_name():
+    """Prints a specific name three times using a for-loop."""
     for _ in range(3):
         print("Aashish Paudel")
 
 
 # 2: Create a function that checks if a number is even or odd
 def check_even():
+    """Takes user input and determines if the integer is even or odd using the modulo operator."""
     num = int(input("Enter a number: "))
-    if num % 2 == 0:
+    if num % 2 == 0:  # Modulo 2 returns 0 for even numbers
         print(f"{num} is even.")
     else:
         print(f"{num} is odd.")
@@ -15,6 +17,7 @@ def check_even():
 
 # 3: Create a function that calculates rectangle area
 def calculate_area():
+    """Prompts for dimensions and calculates area (Length * Width)."""
     length = float(input("Enter the length of the rectangle: "))
     width = float(input("Enter the width of the rectangle: "))
     area = length * width
@@ -22,16 +25,18 @@ def calculate_area():
 
 
 # 4: Create a function that converts Celsius to Fahrenheit
-def celsius_to_fahrenheit():
+def celsius_to_fahrenheit():  # pyright: ignore[reportRedeclaration]
+    """Converts a user-provided Celsius value to Fahrenheit."""
     celsius = float(input("Enter temperature in Celsius: "))
-    fahrenheit = (celsius * 9 / 5) + 32
+    fahrenheit = (celsius * 9 / 5) + 32  # Standard conversion formula
     print(f"{celsius}°C is equal to {fahrenheit}°F.")
 
 
 # 5: Create a function that checks if a string is a palindrome
 def check_palindrome():
+    """Checks if a string reads the same forwards and backwards using string slicing."""
     string = input("Enter a string: ")
-    if string == string[::-1]:
+    if string == string[::-1]:  # [::-1] reverses the string
         print(f"{string} is a palindrome.")
     else:
         print(f"{string} is not a palindrome.")
@@ -39,6 +44,7 @@ def check_palindrome():
 
 # 6: Create a function that calculates the factorial of a number
 def calculate_factorial():
+    """Calculates the product of all positive integers up to num."""
     num = int(input("Enter a number: "))
     factorial = 1
     for i in range(1, num + 1):
@@ -51,13 +57,16 @@ import random  # noqa: E402
 
 
 def generate_random_number():
-    random_number = int(random() * 100) + 1
+    """Generates a pseudo-random integer between 1 and 100."""
+    random_number = int(random() * 100) + 1  # pyright: ignore[reportCallIssue]
     print(f"Generated random number: {random_number}")
 
 
 # 8: Create a function that checks if a year is a leap year
 def check_leap_year():
+    """Determines leap year status based on Gregorian calendar rules."""
     year = int(input("Enter a year: "))
+    # A year is a leap year if divisible by 4, but not 100, unless also divisible by 400
     if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
         print(f"{year} is a leap year.")
     else:
@@ -91,12 +100,14 @@ def increment():
 
 # How would you rewrite this properly?
 def increment(count):
+    """Accepts a value and returns it incremented by 1, avoiding global scope issues."""
     count += 1
     return count
 
 
 # 11: Create a function that prints letter grade based on score
 def calculate_grade():
+    """Determines a letter grade for a fixed score using conditional branching."""
     score = 85
     # 90-100: A, 80-89: B, 70-79: C, 60-69: D, below 60: F
     if score >= 90:
@@ -115,6 +126,7 @@ def calculate_grade():
 # Create a function that checks if password is strong
 # Rules: at least 8 characters, has a number, has uppercase
 def validate_password():
+    """Validates a password string against specific security criteria."""
     password = "Secure123"
     if (
         len(password) >= 8
@@ -128,6 +140,7 @@ def validate_password():
 
 # 13: Create a function that checks multiple conditions for activities
 def check_activities(age, has_license, weekend, holiday, raining):
+    """Uses multiple independent if-statements to suggest activities based on inputs."""
     if age >= 18 and has_license:
         print("You can drive!")
 
@@ -140,6 +153,7 @@ def check_activities(age, has_license, weekend, holiday, raining):
 
 # 14: Create a function that prints Fibonacci sequence up to n
 def fib(n):
+    """Prints the Fibonacci sequence starting from 0 up to the limit n."""
     a, b = 0, 1
     while a < n:
         print(a, end=" ")
@@ -149,8 +163,10 @@ def fib(n):
 
 # 15: Create a function that checks if a number is prime
 def is_prime(num):
+    """Checks if a number is only divisible by 1 and itself."""
     if num <= 1:
         return False
+    # We only need to check up to the square root of the number for efficiency
     for i in range(2, int(num**0.5) + 1):
         if num % i == 0:
             return False
@@ -159,6 +175,7 @@ def is_prime(num):
 
 # 16:  Create a function that takes name and age, prints a message
 def display_info(name, age):
+    """Formats and prints basic user information."""
     print(f"{name} is {age} years old.")
 
 
@@ -169,6 +186,7 @@ display_info("Bob", 30)
 
 # 17: Create a function that takes two numbers and prints their sum
 def add_numbers(a, b):
+    """Calculates and prints the sum of two numbers."""
     total = a + b
     print(f"The sum of {a} and {b} is: {total}")
 
@@ -180,6 +198,7 @@ add_numbers(3.5, 2.5)
 
 # 18:Create a function that calculates rectangle area with length and width
 def rectangle_area(length, width):
+    """Calculates and prints the area based on provided parameters."""
     area = length * width
     print(f" The area of the rectangle is: {area}")
 
@@ -191,6 +210,7 @@ rectangle_area(7.5, 4.2)
 
 # 19: Create a function with a default greeting
 def welcome_user(name, greeting="Welcome"):
+    """Greets a user, with 'Welcome' as the default prefix."""
     print(f"{greeting},{name}!")
 
 
@@ -201,6 +221,7 @@ welcome_user("Aashish", "Hello")  # should print "Hello, Aashish!"
 
 # 20 : Create a power function with default exponent of 2
 def power(base, exponent=2):
+    """Calculates the power of a base. Defaults to squaring the number."""
     result = base**exponent
     print(f"{base} raised to the power of {exponent} is: {result}")
 
@@ -212,6 +233,7 @@ power(5, 3)  # should print 125
 
 # 21: Call this function using keyword arguments
 def book_ticket(name, destination, seat_class, meal_preference):
+    """Simulates booking a travel ticket with multiple specific details."""
     print(f"Ticket for {name}")
     print(f"To: {destination}")
     print(f"Class: {seat_class}")
@@ -243,11 +265,12 @@ book_ticket(
 # Parameters: value, from_unit (default 'C'), to_unit (default 'F')
 # Support: Celsius (C), Fahrenheit (F), Kelvin (K)
 def convert_temperature(value, from_unit="C", to_unit="F"):
+    """Performs multi-unit temperature conversion based on source and destination unit flags."""
     print(f"Converting {value}°{from_unit} to {to_unit}...")
     if from_unit == to_unit:
         return value
     if from_unit == "C":
-        if to_unit == "F":
+        if to_unit == "F":  # Celsius to Fahrenheit
             return (value * 9 / 5) + 32
         elif to_unit == "K":
             return value + 273.15
@@ -273,6 +296,7 @@ print(convert_temperature(300, from_unit="K", to_unit="F"))  # K to F
 # 22: Create a function with multiple parameters and defaults
 # Parameters: price, discount_percent=0, tax_rate=0.08, coupon=0
 def calculate_final_price(price, discount_percent=0, tax_rate=0.08, coupon=0):
+    """Calculates a retail price after applying discounts, taxes, and fixed-value coupons."""
     discounted_price = price * (1 - discount_percent / 100)
     taxed_price = discounted_price * (1 + tax_rate)
     final_price = taxed_price - coupon
@@ -289,6 +313,7 @@ calculate_final_price(100, discount_percent=10, coupon=5)  # → 92.2
 # Required: name, email
 # Optional: age=None, city=None, occupation=None
 def create_profile(name, email, age=None, city=None, occupation=None):
+    """Builds and displays a user profile dictionary, ignoring fields that are None."""
     profile = {
         "name": name,
         "email": email,
@@ -310,6 +335,7 @@ create_profile("Aashish", "aashish@example.com", city="Pokhara", occupation="Stu
 
 # 24: Create a function that simulates an API request with sensible defaults
 def make_request(endpoint, method="GET", headers=None, timeout=30):
+    """Logs simulated API request parameters."""
     print(f"Making {method} request to {endpoint}")
     print(f"Timeout: {timeout}s")
     if headers:
@@ -323,6 +349,7 @@ make_request("/api/users", method="POST", headers={"Auth": "token123"})
 
 # 25: Create a function that simulates fetching data with flexible filtering
 def fetch_users(limit=10, offset=0, status="active", sort_by="created_at"):
+    """Simulates building a SQL-like query for user retrieval."""
     print(f"SELECT * FROM users WHERE status='{status}'")
     print(f"ORDER BY {sort_by} LIMIT {limit} OFFSET {offset}")
 
@@ -334,11 +361,12 @@ fetch_users(limit=50, sort_by="name")  # Custom query
 
 # 26: Create a function that simulates logging with configurable options
 def log_message(message, level="INFO", timestamp=True, file="app.log"):
+    """Prints a log message with an optional timestamp and severity level."""
     import datetime
 
     prefix = f"[{level}]"
     if timestamp:
-        prefix += f" {datetime.datetime.now()}"
+        prefix += f" {datetime.datetime.now()}"  # noqa: DTZ005
     print(f"{prefix} {message}")
 
 
@@ -350,10 +378,12 @@ log_message("Debug info", level="DEBUG", timestamp=False)
 
 # 27: Convert the print version to return version
 def multiply_print(a, b):
+    """Calculates and immediately prints the result."""
     print(a * b)
 
 
 def multiply_return(a, b):
+    """Calculates and returns the result for further use."""
     return a * b
 
 
@@ -364,6 +394,7 @@ print(result)  # Should print 20
 
 # 28: Create a function that returns the square of a number
 def square(num):
+    """Returns the square of the input number."""
     return num * num
 
 
@@ -373,6 +404,7 @@ print(square(5))  # Should print 25
 
 # 29: Create a function that returns True if number is positive
 def is_positive(num):
+    """Returns True if the number is greater than zero."""
     return num > 0
 
 
@@ -383,6 +415,7 @@ print(is_positive(-5))  # Should print False
 
 # 30: Use return values in calculations
 def calculate_discount(price, discount_percent):
+    """Calculates and returns the price after a percentage discount."""
     discount_amount = price * (discount_percent / 100)
     final_price = price - discount_amount
     return final_price
@@ -398,10 +431,12 @@ print(f"Total: Rs.{total}")
 
 # 31: Create a function that converts Celsius to Fahrenheit, then use it to convert to Kelvin
 def celsius_to_fahrenheit(celsius):  # noqa: F811
+    """Returns Fahrenheit value from Celsius."""
     return (celsius * 9 / 5) + 32
 
 
 def fahrenheit_to_kelvin(fahrenheit):
+    """Returns Kelvin value from Fahrenheit."""
     return (fahrenheit - 32) * 5 / 9 + 273.15
 
 
@@ -426,6 +461,7 @@ print(f"Total: {total}, Average: {avg}, Count: {count}")
 
 # 33: Return user info as tuple
 def parse_email(email):
+    """Splits an email address into username and domain parts."""
     username, domain = email.split("@")
     return username, domain
 
@@ -437,7 +473,7 @@ print(f"Username: {username}, Domain: {domain}")
 
 # 34: Create a function that calculates letter grade based on score and returns it
 def calculate_letter_grade(score):
-
+    """Returns a letter grade string based on a numeric score."""
     if score >= 90:
         return "A"
     elif score >= 80:
@@ -459,6 +495,7 @@ if calculate_letter_grade(92) == "A":
 
 # 35: Create a function that analyzes a string and returns multiple statistics
 def analyze_string(text):
+    """Analyzes a string for character/word counts and casing distribution."""
     chars = len(text)
     words = len(text.split())
     upper = sum(1 for char in text if char.isupper())
@@ -473,6 +510,7 @@ print(f"Chars: {chars}, Words: {words}, Upper: {upper}, Lower: {lower}")
 
 # 36: Create a function that processes a bank transaction and returns new balance and success status
 def process_transaction(balance, amount, transaction_type):
+    """Handles deposits and withdrawals, returning the new balance and a status message."""
     if transaction_type == "deposit":
         new_balance = balance + amount
         return new_balance, True, "Deposit successful."
@@ -497,6 +535,7 @@ print(f"Balance: Rs.{new_balance}, Success: {success}, Message: {msg}")
 
 # 37: Create a function that takes a list of temperatures in Fahrenheit and returns min, max, average, and range category
 def get_temperature_info(temps_fahrenheit):
+    """Calculates min, max, and average temperatures, then categorizes the variance."""
     if not temps_fahrenheit:
         return None, None, None, "No data"
 
@@ -521,6 +560,7 @@ print(f"Min: {min_t}°F, Max: {max_t}°F, Avg: {avg_t}°F, Range: {category}")
 
 # 38: Create a function that validates API response based on HTTP status code and returns a message
 def validate_api_response(response_code):
+    """Maps common HTTP status codes to success flags and user-friendly messages."""
     if response_code == 200:
         return True, "Success"
     elif response_code == 404:
@@ -547,6 +587,7 @@ else:
 
 # 39: Create a function that validates user input for creating an account and returns validation status and error messages
 def validate_user_input(username, password):
+    """Checks username and password against length and character requirements."""
     errors = []
 
     if len(username) < 3:
@@ -574,6 +615,7 @@ else:
 
 #  40: Create a function that calculates the total price of items in a shopping cart, applying tax and discounts, and returns the final amount along with breakdown of calculations.
 def calculate_cart_total(items, tax_rate=0.08, coupon_code=None):
+    """Computes subtotal, applies coupon discounts, then adds tax to find the final total."""
     subtotal = sum(items)
     discount = 0
     if coupon_code == "SAVE10":
