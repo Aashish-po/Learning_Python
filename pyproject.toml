@@ -1,42 +1,159 @@
-# Create in root directory
-cat > pyproject.toml << 'EOF'
 [project]
 name = "python-for-ai"
 version = "0.1.0"
-description = "Complete Python learning journey from fundamentals to AI"
+description = "Complete Python learning journey from fundamentals to AI and data science"
 authors = [
     {name = "Aashish Poudel", email = "poudelashish572@gmail.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.12"
+license = {text = "MIT"}
+keywords = ["python", "learning", "ai", "data-science", "tutorial"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.14",
+]
+
 dependencies = [
     "pandas>=2.2.0",
     "matplotlib>=3.8.0",
+    "seaborn>=0.13.0",
+    "numpy>=1.26.0",
     "requests>=2.31.0",
     "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+# AI/ML dependencies
+ai = [
+    "openai>=1.0.0",
+    "anthropic>=0.18.0",
+    "langchain>=0.1.0",
+]
+
+# Data science dependencies
+data = [
+    "scikit-learn>=1.4.0",
+    "jupyter>=1.0.0",
+    "plotly>=5.18.0",
+]
+
+# Web development dependencies
+web = [
+    "flask>=3.0.0",
+    "fastapi>=0.109.0",
+    "uvicorn>=0.27.0",
 ]
 
 [project.urls]
 Homepage = "https://github.com/Aashish-po/Learning_Python"
 Repository = "https://github.com/Aashish-po/Learning_Python.git"
+"Bug Tracker" = "https://github.com/Aashish-po/Learning_Python/issues"
 
 [tool.uv]
 dev-dependencies = [
     "ruff>=0.1.0",
     "pytest>=7.4.0",
     "mypy>=1.7.0",
+    "pytest-cov>=4.1.0",
+    "black>=24.0.0",
 ]
 
 [tool.ruff]
+# Line length
 line-length = 100
+
+# Python version
 target-version = "py312"
-exclude = ["venv", ".venv", "__pycache__"]
+
+# Exclude directories
+exclude = [
+    ".venv",
+    "venv",
+    "__pycache__",
+    ".git",
+    ".pytest_cache",
+    ".mypy_cache",
+    ".ruff_cache",
+    "build",
+    "dist",
+    "*.egg-info",
+]
 
 [tool.ruff.lint]
-select = ["E", "F", "I", "N", "W", "UP"]
-ignore = []
+# Enable rules
+select = [
+    "E",   # pycodestyle errors
+    "F",   # pyflakes
+    "I",   # isort (import sorting)
+    "N",   # pep8-naming
+    "W",   # pycodestyle warnings
+    "UP",  # pyupgrade (modernize Python code)
+    "B",   # flake8-bugbear (common bugs)
+    "C4",  # flake8-comprehensions
+    "DTZ", # flake8-datetimez
+    "T10", # flake8-debugger
+]
+
+# Ignore specific rules
+ignore = [
+    "E501",  # Line too long (handled by formatter)
+]
+
+# Allow autofix for all enabled rules
+fixable = ["ALL"]
+unfixable = []
 
 [tool.ruff.format]
+# Formatting options
 quote-style = "double"
 indent-style = "space"
-EOF
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+[tool.ruff.lint.isort]
+known-first-party = ["python_for_ai"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "--verbose",
+    "--cov=.",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+]
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+ignore_missing_imports = true
+
+[tool.coverage.run]
+source = ["."]
+omit = [
+    "*/tests/*",
+    "*/venv/*",
+    "*/.venv/*",
+    "*/site-packages/*",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
