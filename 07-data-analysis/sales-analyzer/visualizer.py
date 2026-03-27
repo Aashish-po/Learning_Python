@@ -1,24 +1,26 @@
+"""Visualization helpers for turning sales analysis into saved charts."""
+
 import matplotlib.pyplot as plt
 import pandas as pd
-from pathlib import Path
-from typing import Union, List
 import logging
+from pathlib import Path
+from typing import List, Union
 
 from config import COLORS, CHART_STYLE, CHART_DPI, CHART_FIGSIZE
 
 logger = logging.getLogger(__name__)
 
 
-# This module provides functions to create visualizations for sales data analysis, including bar charts and line charts. It uses Matplotlib to generate charts that can be saved as image files for reporting and presentation purposes.
 def create_revenue_chart(
     product_stats: pd.DataFrame, output_path: Union[str, Path]
 ) -> Path:
+    """Create a bar chart for revenue by product and save it to disk."""
 
     logger.info("Creating revenue chart")
 
     plt.figure(figsize=CHART_FIGSIZE)
 
-    # Use 'total' column (not 'revenue')
+    # The aggregated table stores revenue in the "total" column.
     ax = product_stats["total"].plot(
         kind="bar", color=COLORS["revenue"], edgecolor="black", width=0.7
     )
@@ -49,10 +51,10 @@ def create_revenue_chart(
     return output_path
 
 
-# Create bar chart of quantity sold by product
 def create_quantity_chart(
     product_stats: pd.DataFrame, output_path: Union[str, Path]
 ) -> Path:
+    """Create a bar chart for units sold by product and save it to disk."""
 
     logger.info("Creating quantity chart")
 
@@ -88,12 +90,12 @@ def create_quantity_chart(
     return output_path
 
 
-# Create line chart showing revenue trend over time
 def create_trend_chart(dataframe: pd.DataFrame, output_path: Union[str, Path]) -> Path:
+    """Create a date-based revenue trend chart from the cleaned sales data."""
 
     logger.info("Creating trend chart")
 
-    # Group by date
+    # Group once here so the chart reflects daily totals rather than raw transactions.
     daily_revenue = dataframe.groupby("date")["total"].sum()
 
     plt.figure(figsize=CHART_FIGSIZE)
@@ -129,10 +131,10 @@ def create_trend_chart(dataframe: pd.DataFrame, output_path: Union[str, Path]) -
     return output_path
 
 
-# Create complete dashboard with multiple charts
 def create_dashboard(
     dataframe: pd.DataFrame, product_stats: pd.DataFrame, output_dir: Union[str, Path]
 ) -> List[Path]:
+    """Build the full chart set and return the files created for the report."""
     logger.info("Creating dashboard")
 
     output_dir = Path(output_dir)

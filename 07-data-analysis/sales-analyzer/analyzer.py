@@ -1,3 +1,5 @@
+"""Command-line entry point for the sales analysis workflow."""
+
 import logging
 import sys
 from datetime import datetime
@@ -16,10 +18,10 @@ from helpers import format_currency, get_top_products, get_summary_stats
 from visualizer import create_dashboard
 
 
-# Create log file with timestamp
+# Give each run its own log so previous analysis output is never overwritten.
 log_file = OUTPUT_DIR / f"analysis_{datetime.now():%Y%m%d_%H%M%S}.log"
 
-# Configure file handler with UTF-8 encoding
+# Write logs to both disk and stdout so the run is traceable in real time and later.
 file_handler = logging.FileHandler(log_file, encoding="utf-8")
 file_handler.setLevel(LOG_LEVEL)
 file_handler.setFormatter(logging.Formatter(LOG_FORMAT, datefmt=LOG_DATE_FORMAT))
@@ -35,7 +37,6 @@ logging.basicConfig(level=LOG_LEVEL, handlers=[file_handler, console_handler])
 logger = logging.getLogger(__name__)
 
 
-# Utility functions for printing results
 def print_header(title: str, width: int = 60):
     """Print formatted section header."""
     print("\n" + "=" * width)
@@ -43,8 +44,8 @@ def print_header(title: str, width: int = 60):
     print("=" * width)
 
 
-# Function to print analysis results
 def print_analysis_results(df, product_stats):
+    """Print the key business metrics in a readable console layout."""
 
     print_header("SALES ANALYSIS RESULTS")
 
@@ -75,8 +76,8 @@ def print_analysis_results(df, product_stats):
     print("=" * 60)
 
 
-# Function to save results to files
 def save_results(df, product_stats):
+    """Persist analysis outputs so charts and summaries can be reused later."""
 
     logger.info("Saving results...")
 
@@ -90,7 +91,7 @@ def save_results(df, product_stats):
     df.to_csv(details_file, index=False)
     logger.info("Saved: %s", details_file.name)
 
-    # Save summary statistics
+    # The text summary is intentionally plain text so it is easy to open anywhere.
     stats = get_summary_stats(df)
     summary_file = OUTPUT_DIR / "summary_statistics.txt"
 
@@ -111,11 +112,12 @@ def save_results(df, product_stats):
     logger.info("Saved: %s", summary_file.name)
 
 
-# Function to generate final summary of generated files
 def generate_final_summary(charts):
+    """Show a final inventory of the files created during this run."""
     print_header("SUMMARY")
 
     output_files = list(OUTPUT_DIR.glob("*"))
+    # .gitkeep is only there to keep the folder in version control.
     output_files = [f for f in output_files if f.is_file() and f.name != ".gitkeep"]
 
     print(f"\n📁 Generated {len(output_files)} files in output/")
@@ -138,8 +140,8 @@ def generate_final_summary(charts):
     print("=" * 60)
 
 
-# Main execution function
 def main():
+    """Run the end-to-end sales analysis pipeline with basic error reporting."""
     logger.info("=" * 60)
     logger.info("Starting Sales Analysis Tool")
     logger.info("=" * 60)

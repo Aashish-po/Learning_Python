@@ -1,3 +1,5 @@
+"""Simple API-calling examples showing direct requests and a reusable helper."""
+
 import requests
 
 # API endpoint URL
@@ -10,7 +12,7 @@ params = {
     "current": "temperature_2m",
 }
 
-# Make the request
+# This first call demonstrates the raw request/response flow before wrapping it.
 response = requests.get(url, params=params)
 
 # Get JSON data
@@ -22,7 +24,7 @@ current_temperature = data.get("current", {}).get("temperature_2m")
 print(f"The current temperature in Pokhara is: {current_temperature}°C")
 
 
-# Function to fetch weather data for given coordinates
+# Wrap the API logic in a function so other scripts can reuse the same request shape.
 def get_weather(latitude, longitude):
     url = "https://api.open-meteo.com/v1/forecast"
 

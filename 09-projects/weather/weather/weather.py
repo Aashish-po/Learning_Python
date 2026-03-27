@@ -1,3 +1,5 @@
+"""Fetch, analyze, and visualize recent weather data for a selected city."""
+
 import requests
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -10,6 +12,7 @@ def fetch_weather_data(latitude, longitude, days=7):
     today = datetime.now()
     start = today - timedelta(days=days)
 
+    # The forecast endpoint is also able to return a recent daily time window.
     url = "https://api.open-meteo.com/v1/forecast"
     params = {
         "latitude": latitude,
@@ -41,7 +44,7 @@ def process_weather_data(data):
         }
     )
 
-    # Calculate derived columns
+    # Add derived columns once so plotting/statistics code stays simple.
     df["avg_temp"] = (df["max_temp"] + df["min_temp"]) / 2
     df["temp_range"] = df["max_temp"] - df["min_temp"]
 
@@ -53,12 +56,8 @@ def create_visualization(df, city_name, output_file="weather_chart.png"):
     plt.figure(figsize=(12, 6))
 
     # Temperature plot
-    plt.plot(
-        df["date"], df["max_temp"], "r-o", label="Max Temp", linewidth=2, markersize=6
-    )
-    plt.plot(
-        df["date"], df["min_temp"], "b-o", label="Min Temp", linewidth=2, markersize=6
-    )
+    plt.plot(df["date"], df["max_temp"], "r-o", label="Max Temp", linewidth=2, markersize=6)
+    plt.plot(df["date"], df["min_temp"], "b-o", label="Min Temp", linewidth=2, markersize=6)
     plt.plot(df["date"], df["avg_temp"], "g--", label="Average", linewidth=2)
 
     # Styling
@@ -98,17 +97,13 @@ def print_statistics(df):
     coldest = df.loc[df["min_temp"].idxmin()]
 
     print("\nExtreme Days:")
-    print(
-        f"  Hottest: {hottest['date'].strftime('%Y-%m-%d')} ({hottest['max_temp']:.1f}°C)"
-    )
-    print(
-        f"  Coldest: {coldest['date'].strftime('%Y-%m-%d')} ({coldest['min_temp']:.1f}°C)"
-    )
+    print(f"  Hottest: {hottest['date'].strftime('%Y-%m-%d')} ({hottest['max_temp']:.1f}°C)")
+    print(f"  Coldest: {coldest['date'].strftime('%Y-%m-%d')} ({coldest['min_temp']:.1f}°C)")
 
 
 def save_data(df, output_file="weather_data.csv"):
     """Save DataFrame to CSV."""
-    # Create directory if needed
+    # Allow callers to pass nested output paths without pre-creating directories.
     output_dir = os.path.dirname(output_file)
     if output_dir and not os.path.exists(output_dir):
         os.makedirs(output_dir)
@@ -119,7 +114,7 @@ def save_data(df, output_file="weather_data.csv"):
 
 def main():
     """Main execution function."""
-    # City coordinates
+    # Keep city coordinates in one place so future additions are easy.
     cities = {
         "Kathmandu": (27.7172, 85.3240),
         "Pokhara": (28.2096, 83.9856),

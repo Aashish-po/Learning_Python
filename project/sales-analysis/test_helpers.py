@@ -1,8 +1,8 @@
-# Test helper functions for sales analysis.
+"""Regression tests for the reusable sales-analysis helper functions."""
+
 from helpers import calculate_total, format_currency, calculate_profit_margin
 
 
-# Test functions for helper functions in sales analysis.
 def test_calculate_total():
     assert calculate_total(5, 10.0) == 50.0
     assert calculate_total(0, 100.0) == 0.0

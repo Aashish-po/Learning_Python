@@ -1,3 +1,6 @@
+"""Tiny script that mimics how variables persist between notebook-style steps."""
+
+
 # Let's explore interactive mode
 name = "Python Learner"
 print(f"Hello, {name}!")
@@ -13,9 +16,9 @@ print(f"Total: {total}")
 # First, create a variable
 message = "Hello"
 
-# Later, use it (even in a different cell)
+# Later, reuse the same variable to show that interactive sessions keep state around.
 print(message + " World!")
 
-# Modify it
+# Reassign the variable so learners can see that later steps read the newest value.
 message = message.upper()
 print(message)

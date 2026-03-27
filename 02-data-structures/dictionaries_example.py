@@ -1,4 +1,4 @@
-"""Examples of working with Python dictionaries."""
+"""Examples of working with Python dictionaries and common lookup patterns."""
 
 
 student = {
@@ -22,7 +22,7 @@ print("Keys:", list(student.keys()))
 print("Values:", list(student.values()))
 print("Items:", list(student.items()))
 
-# Dictionary comprehension
+# Dictionary comprehensions are a compact way to build key/value mappings.
 squares = {number: number**2 for number in range(1, 6)}
 print("\nSquares dictionary:", squares)
 
@@ -34,7 +34,7 @@ classroom = {
 print("\nNested dictionary:", classroom)
 print("Student 2 grade:", classroom["student_2"]["grade"])
 
-# Merging dictionaries
+# The merge operator creates a new dictionary without mutating the originals.
 contact = {"email": "aashish@example.com"}
 profile = student | contact
 print("Merged dictionary:", profile)

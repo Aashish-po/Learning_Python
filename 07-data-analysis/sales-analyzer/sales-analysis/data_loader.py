@@ -1,11 +1,13 @@
-# This module provides functions to load sales data from CSV files, validate the data, and perform basic cleaning operations. It ensures that the data is in a consistent format for analysis.
-import pandas as pd
+"""Load, validate, and normalize sales CSV data before analysis."""
+
 from pathlib import Path
+
+import pandas as pd
 from helpers import validate_sales_data
 
 
-# Load sales data from a CSV file, validate it, and preprocess it for analysis
 def load_sales_data(filepath):
+    """Read one CSV file and add the derived columns expected by analyzers."""
     filepath = Path(filepath)
 
     if not filepath.exists():
@@ -17,15 +19,15 @@ def load_sales_data(filepath):
     # Validate
     validate_sales_data(df)
 
-    # Preprocess
+    # Normalize dates and totals once so downstream code can assume both exist.
     df["date"] = pd.to_datetime(df["date"])
     df["total"] = df["quantity"] * df["price"]
 
     return df
 
 
-# Load and combine multiple CSV files from a directory, then clean the combined data
 def load_multiple_files(data_dir, pattern="*.csv"):
+    """Combine multiple matching CSV files into one analysis-ready DataFrame."""
     data_dir = Path(data_dir)
     files = list(data_dir.glob(pattern))
 
@@ -35,14 +37,15 @@ def load_multiple_files(data_dir, pattern="*.csv"):
     dataframes = []
     for file in files:
         df = load_sales_data(file)
+        # Preserve provenance so combined reports can trace rows back to the source file.
         df["source_file"] = file.name
         dataframes.append(df)
 
     return pd.concat(dataframes, ignore_index=True)
 
 
-# Clean the sales data by removing duplicates, filtering out invalid entries, and sorting by date
 def clean_sales_data(dataframe):
+    """Drop obviously invalid rows while keeping the original DataFrame untouched."""
     df = dataframe.copy()
 
     # Remove duplicates

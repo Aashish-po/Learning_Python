@@ -1,4 +1,4 @@
-"""Examples of working with Python tuples."""
+"""Examples of working with Python tuples and lightweight structured data."""
 
 from collections import namedtuple
 
@@ -17,7 +17,7 @@ colors = ("red", "green", "blue")
 print("Colors tuple:", colors)
 print("Number of colors:", len(colors))
 
-# Named tuple
+# namedtuple gives tuple-like immutability with attribute access for readability.
 Point = namedtuple("Point", ["x", "y"])
 home = Point(5, 9)
 print("\nNamed tuple:", home)

@@ -1,3 +1,5 @@
+"""Fetch, analyze, and visualize recent weather data for a selected city."""
+
 import requests
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -10,6 +12,7 @@ def fetch_weather_data(latitude, longitude, days=7):
     today = datetime.now()
     start = today - timedelta(days=days)
 
+    # The forecast endpoint is also able to return a recent daily time window.
     url = "https://api.open-meteo.com/v1/forecast"
     params = {
         "latitude": latitude,
@@ -41,7 +44,7 @@ def process_weather_data(data):
         }
     )
 
-    # Calculate derived columns
+    # Add derived columns once so plotting/statistics code stays simple.
     df["avg_temp"] = (df["max_temp"] + df["min_temp"]) / 2
     df["temp_range"] = df["max_temp"] - df["min_temp"]
 
@@ -108,7 +111,7 @@ def print_statistics(df):
 
 def save_data(df, output_file="weather_data.csv"):
     """Save DataFrame to CSV."""
-    # Create directory if needed
+    # Allow callers to pass nested output paths without pre-creating directories.
     output_dir = os.path.dirname(output_file)
     if output_dir and not os.path.exists(output_dir):
         os.makedirs(output_dir)
@@ -119,7 +122,7 @@ def save_data(df, output_file="weather_data.csv"):
 
 def main():
     """Main execution function."""
-    # City coordinates
+    # Keep city coordinates in one place so future additions are easy.
     cities = {
         "Kathmandu": (27.7172, 85.3240),
         "Pokhara": (28.2096, 83.9856),

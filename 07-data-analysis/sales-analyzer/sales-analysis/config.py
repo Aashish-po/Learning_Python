@@ -1,3 +1,5 @@
+"""Central configuration for the sales analysis project."""
+
 from pathlib import Path
 
 
@@ -45,9 +47,9 @@ LOG_DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 LOG_LEVEL = "INFO"
 
 
-# Ensure directories exist
+# Create output/data folders during import so the rest of the project can write safely.
 OUTPUT_DIR.mkdir(exist_ok=True)
 DATA_DIR.mkdir(exist_ok=True)
 
-# Create .gitkeep files
+# Keep the output folder tracked in git even before reports are generated.
 (OUTPUT_DIR / ".gitkeep").touch(exist_ok=True)
