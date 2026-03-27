@@ -5,15 +5,12 @@ import pandas as pd
 import logging
 from pathlib import Path
 from typing import List, Union
-
 from config import COLORS, CHART_STYLE, CHART_DPI, CHART_FIGSIZE
 
 logger = logging.getLogger(__name__)
 
 
-def create_revenue_chart(
-    product_stats: pd.DataFrame, output_path: Union[str, Path]
-) -> Path:
+def create_revenue_chart(product_stats: pd.DataFrame, output_path: Union[str, Path]) -> Path:
     """Create a bar chart for revenue by product and save it to disk."""
 
     logger.info("Creating revenue chart")
@@ -51,9 +48,7 @@ def create_revenue_chart(
     return output_path
 
 
-def create_quantity_chart(
-    product_stats: pd.DataFrame, output_path: Union[str, Path]
-) -> Path:
+def create_quantity_chart(product_stats: pd.DataFrame, output_path: Union[str, Path]) -> Path:
     """Create a bar chart for units sold by product and save it to disk."""
 
     logger.info("Creating quantity chart")
@@ -143,15 +138,11 @@ def create_dashboard(
     created_files = []
 
     # Revenue chart
-    revenue_chart = create_revenue_chart(
-        product_stats, output_dir / "revenue_by_product.png"
-    )
+    revenue_chart = create_revenue_chart(product_stats, output_dir / "revenue_by_product.png")
     created_files.append(revenue_chart)
 
     # Quantity chart
-    quantity_chart = create_quantity_chart(
-        product_stats, output_dir / "quantity_by_product.png"
-    )
+    quantity_chart = create_quantity_chart(product_stats, output_dir / "quantity_by_product.png")
     created_files.append(quantity_chart)
 
     # Trend chart

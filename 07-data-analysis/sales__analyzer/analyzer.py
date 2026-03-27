@@ -44,13 +44,10 @@ def print_header(title: str, width: int = 60):
     print("=" * width)
 
 
-def print_analysis_results(df, product_stats):
+def print_analysis_results(stats, product_stats):
     """Print the key business metrics in a readable console layout."""
 
     print_header("SALES ANALYSIS RESULTS")
-
-    # Get summary statistics
-    stats = get_summary_stats(df)
 
     # Overall statistics
     print(f"\n💰 Total Revenue: {format_currency(stats['total_revenue'])}")
@@ -58,9 +55,7 @@ def print_analysis_results(df, product_stats):
     print(f"📋 Total Transactions: {stats['total_transactions']:,}")
     print(f"🏷️  Unique Products: {stats['unique_products']}")
     print(f"💵 Average Transaction: {format_currency(stats['average_transaction'])}")
-    print(
-        f"📅 Date Range: {stats['date_range']['start']} to {stats['date_range']['end']}"
-    )
+    print(f"📅 Date Range: {stats['date_range']['start']} to {stats['date_range']['end']}")
 
     # Top products
     print(f"\n🏆 Top {TOP_N_PRODUCTS} Products by Revenue:")
@@ -69,14 +64,12 @@ def print_analysis_results(df, product_stats):
     print("-" * 60)
 
     for product, row in product_stats.iterrows():
-        print(
-            f"{product:<20} {int(row['quantity']):>10,} {format_currency(row['total']):>15}"
-        )
+        print(f"{product:<20} {int(row['quantity']):>10,} {format_currency(row['total']):>15}")
 
     print("=" * 60)
 
 
-def save_results(df, product_stats):
+def save_results(df, stats, product_stats):
     """Persist analysis outputs so charts and summaries can be reused later."""
 
     logger.info("Saving results...")
@@ -92,7 +85,6 @@ def save_results(df, product_stats):
     logger.info("Saved: %s", details_file.name)
 
     # The text summary is intentionally plain text so it is easy to open anywhere.
-    stats = get_summary_stats(df)
     summary_file = OUTPUT_DIR / "summary_statistics.txt"
 
     with open(summary_file, "w", encoding="utf-8") as f:
@@ -102,12 +94,8 @@ def save_results(df, product_stats):
         f.write(f"Total Items Sold: {stats['total_quantity']:,}\n")
         f.write(f"Total Transactions: {stats['total_transactions']:,}\n")
         f.write(f"Unique Products: {stats['unique_products']}\n")
-        f.write(
-            f"Average Transaction: {format_currency(stats['average_transaction'])}\n"
-        )
-        f.write(
-            f"Date Range: {stats['date_range']['start']} to {stats['date_range']['end']}\n"
-        )
+        f.write(f"Average Transaction: {format_currency(stats['average_transaction'])}\n")
+        f.write(f"Date Range: {stats['date_range']['start']} to {stats['date_range']['end']}\n")
 
     logger.info("Saved: %s", summary_file.name)
 
@@ -160,11 +148,12 @@ def main():
         # 3. Analyze
         logger.info("Step 3: Analyzing data")
         product_stats = get_top_products(df, TOP_N_PRODUCTS)
+        stats = get_summary_stats(df)
         logger.info("Analyzed %d top products", len(product_stats))
 
         # 4. Print results
         logger.info("Step 4: Displaying results")
-        print_analysis_results(df, product_stats)
+        print_analysis_results(stats, product_stats)
 
         # 5. Create visualizations
         logger.info("Step 5: Creating visualizations")
@@ -173,7 +162,7 @@ def main():
 
         # 6. Save results
         logger.info("Step 6: Saving results")
-        save_results(df, product_stats)
+        save_results(df, stats, product_stats)
 
         # 7. Final summary
         generate_final_summary(charts)
