@@ -305,13 +305,13 @@ Turning data into insights with pandas and matplotlib.
 ---
 
 ### Phase 8: APIs & Integration (Week 7-8)
-**Status:** 🔄 In Progress
+**Status:** ✅ Complete
 
 Connecting Python to the outside world.
 
 **Topics Covered:**
 - **HTTP Requests:** `requests` library for REST APIs
-- **JSON Handling:** Parsing API responses
+- **JSON Handling:** Parsing API responses and configuration objects
 - **Authentication:** API keys, tokens, OAuth
 - **Error Handling:** Network errors, rate limiting, retries
 - **Environment Variables:** Keeping secrets safe
@@ -319,6 +319,22 @@ Connecting Python to the outside world.
 **Current Focus:** Building API clients for OpenAI and Anthropic Claude.
 
 📁 **Code:** [`08-apis/`](08-apis/)
+
+---
+
+### Phase 9: Testing & Quality Assurance (Week 8)
+**Status:** 🔄 In Progress
+
+Ensuring code reliability and maintainability.
+
+**Topics Covered:**
+- **Pytest Basics:** Writing simple assertions and smoke tests
+- **Project Structure:** Organizing tests in a dedicated `tests/` directory
+- **Automation:** Integrating linting (Ruff) and testing into the workflow
+
+**Key Achievement:** Implemented initial smoke tests to verify arithmetic and string transformations within the environment.
+
+📁 **Code:** `tests/`
 
 ---
 
