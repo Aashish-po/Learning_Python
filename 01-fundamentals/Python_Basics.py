@@ -321,9 +321,7 @@ print(message.count("Python"))  # 2 (number of times)
 # Replace
 new_message = message.replace("Python", "JavaScript")
 print(new_message)  # "I love JavaScript programming with JavaScript"
-print(
-    message.replace("Python", "JavaScript")
-)  # "I love JavaScript programming with JavaScript"
+print(message.replace("Python", "JavaScript"))  # "I love JavaScript programming with JavaScript"
 
 
 # Let's explore interactive mode
@@ -510,7 +508,7 @@ my_dict = {}
 person = {"name": "Aashish", "age": 18, "city": "Pokhara"}
 
 # Different ways to create
-scores = dict(math=95, english=87, science=92)
+scores = {"math": 95, "english": 87, "science": 92}
 
 person = {"name": "Aashish", "age": 18, "city": "Pokhara"}
 
@@ -608,7 +606,7 @@ empty_set = set()  # NOT {} - that's a dict!
 
 # Set with values - both ways work
 numbers = {1, 2, 3, 4, 5}
-fruits = set(["apple", "banana", "orange"])
+fruits = {"apple", "banana", "orange"}
 
 # From a list (removes duplicates)
 scores = [85, 90, 85, 92, 90]
