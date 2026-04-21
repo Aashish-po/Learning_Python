@@ -17,6 +17,7 @@ maze = [
 
 
 def print_maze(maze, stdscr, path=None):
+    """Render maze with path highlighted in red."""
     if path is None:
         path = []
     blue = curses.color_pair(1)
@@ -31,6 +32,7 @@ def print_maze(maze, stdscr, path=None):
 
 
 def find_start(maze, start):
+    """Find position of start/end symbol in maze."""
     for i, row in enumerate(maze):
         for j, value in enumerate(row):
             if value == start:
@@ -39,7 +41,24 @@ def find_start(maze, start):
     return None
 
 
+def find_neighbors(maze, row, col):
+    """Return valid adjacent positions (up, down, left, right) within bounds."""
+    neighbors = []
+
+    if row > 0:  # UP
+        neighbors.append((row - 1, col))
+    if row + 1 < len(maze):  # DOWN
+        neighbors.append((row + 1, col))
+    if col > 0:  # LEFT
+        neighbors.append((row, col - 1))
+    if col + 1 < len(maze[0]):  # RIGHT
+        neighbors.append((row, col + 1))
+
+    return neighbors
+
+
 def find_path(maze, stdscr):
+    """Find shortest path from 'O' to 'X' using BFS, visualizing progress."""
     start = "O"
     end = "X"
     start_pos = find_start(maze, start)
@@ -53,6 +72,7 @@ def find_path(maze, stdscr):
         current_pos, path = q.get()
         row, col = current_pos
 
+        # Visualize current path
         stdscr.clear()
         print_maze(maze, stdscr, path)
         time.sleep(0.2)
@@ -61,33 +81,19 @@ def find_path(maze, stdscr):
         if maze[row][col] == end:
             return path
 
+        # Mark current as visited BEFORE exploring neighbors (BFS optimization)
+        visited.add(current_pos)
+
         neighbors = find_neighbors(maze, row, col)
         for neighbor in neighbors:
             if neighbor in visited:
                 continue
-
             r, c = neighbor
             if maze[r][c] == "#":
                 continue
 
             new_path = path + [neighbor]
             q.put((neighbor, new_path))
-            visited.add(neighbor)
-
-
-def find_neighbors(maze, row, col):
-    neighbors = []
-
-    if row > 0:  # UP
-        neighbors.append((row - 1, col))
-    if row + 1 < len(maze):  # DOWN
-        neighbors.append((row + 1, col))
-    if col > 0:  # LEFT
-        neighbors.append((row, col - 1))
-    if col + 1 < len(maze[0]):  # RIGHT
-        neighbors.append((row, col + 1))
-
-    return neighbors
 
 
 def main(stdscr):
