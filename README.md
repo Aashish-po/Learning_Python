@@ -15,7 +15,7 @@ I'm a passionate programmer transitioning from C++ and full-stack JavaScript dev
 **Connect with me:**
 
 - 🐙 GitHub: [@Aashish-po](https://github.com/Aashish-po)
-- 💻 LeetCode: [aa__shish_07](https://leetcode.com/aa__shish_07/)
+- 💻 LeetCode: [aa\_\_shish_07](https://leetcode.com/aa__shish_07/)
 - 📧 Email: <poudelashish572@gmail.com>
 
 **My Background:**
@@ -72,11 +72,11 @@ uv run pytest
 
 ## 📖 Table of Contents
 
-- [Learning Path](#-learning-path)
+- [Learning Path](#learning-path)
 - [Skills Mastered](#-skills-mastered)
 - [Projects Showcase](#-projects-showcase)
 - [Key Insights](#-key-insights-from-my-journey)
-- [Tech Stack](#-tech-stack)
+- [Tech Stack](#tech-stack)
 - [Resources](#-resources-that-helped)
 - [Next Steps](#-whats-next)
 - [How to Use This Repo](#-how-to-use-this-repository)
@@ -84,6 +84,9 @@ uv run pytest
 ---
 
 ## 🗺️ Learning Path
+
+<!-- markdownlint-disable-next-line MD033 -->
+<a id="learning-path"></a>
 
 My journey progressed through these stages:
 
@@ -155,7 +158,7 @@ Building reusable, maintainable code with classes.
 
 **Decision Framework I Developed:**
 
-```
+```text
 Use classes when:
 ✅ You need to maintain state between operations
 ✅ Passing same data to multiple functions
@@ -425,16 +428,16 @@ def process_data(
 ) -> list:
     """Process data with optional filtering and transformation."""
     result = data
-    
+
     if filter_func:
         result = [item for item in result if filter_func(item)]
-    
+
     if transform_func:
         result = [transform_func(item) for item in result]
-    
+
     if limit:
         result = result[:limit]
-    
+
     return result
 ```
 
@@ -516,17 +519,17 @@ config = {k: v for k, v in raw_config.items() if v is not None}
 ```python
 class SalesAnalyzer:
     """Analyze sales data with multiple methods."""
-    
+
     def __init__(self, filepath):
         self.filepath = filepath
         self.data = None
         self.stats = {}
-    
+
     def load(self):
         """Load data from CSV."""
         self.data = pd.read_csv(self.filepath)
         return self  # Enable method chaining
-    
+
     def analyze(self):
         """Calculate all metrics."""
         self.stats = {
@@ -584,7 +587,7 @@ class ShoppingCart:
     def __init__(self):
         self.items = []
         self.total = 0
-    
+
     def add_item(self, item, price):
         self.items.append(item)
         self.total += price
@@ -755,7 +758,7 @@ A production-ready data analysis tool that processes sales data, generates insig
 
 **Code Structure:**
 
-```
+```text
 sales_analyzer/
 ├── __init__.py
 ├── main.py           # Entry point
@@ -839,7 +842,7 @@ uv run python analyzer.py
 - [10-exercises/practice/random_number.py](10-exercises/practice/random_number.py) - number guessing game
 - [10-exercises/practice/rock_paper_scissors.py](10-exercises/practice/rock_paper_scissors.py) - Rock Paper Scissors
 - [10-exercises/practice/slot_machine.py](10-exercises/practice/slot_machine.py) - slot machine simulator
-- [10-exercises/practice/turtle__race.py](10-exercises/practice/turtle__race.py) - turtle race animation (requires a GUI)
+- [10-exercises/practice/turtle\_\_race.py](10-exercises/practice/turtle__race.py) - turtle race animation (requires a GUI)
 - [10-exercises/practice/wpm.py](10-exercises/practice/wpm.py) - typing speed test
 
 **Try One:**
@@ -920,6 +923,9 @@ result = [item * 2 for item in items if item > 0]
 
 ## 🛠️ Tech Stack
 
+<!-- markdownlint-disable-next-line MD033 -->
+<a id="tech-stack"></a>
+
 ### Core Python
 
 - **Python 3.12** - Latest stable version
@@ -974,8 +980,8 @@ result = [item * 2 for item in items if item > 0]
 
 ### Books
 
-- *Fluent Python* by Luciano Ramalho - Deep dive into Pythonic code
-- *Python Cookbook* by David Beazley - Practical recipes
+- _Fluent Python_ by Luciano Ramalho - Deep dive into Pythonic code
+- _Python Cookbook_ by David Beazley - Practical recipes
 
 ### Tools & Libraries
 
@@ -1151,33 +1157,38 @@ result = [item * 2 for item in items if item > 0]
 
 ## 📊 Progress Tracking
 
-| Category            | Topic             | Status        | Confidence | Notes                          |
-| ------------------- | ----------------- | ------------- | ---------- | ------------------------------ |
-| **Fundamentals**    | Variables & Types | ✅ Complete    | ⭐⭐⭐⭐⭐      | Solid foundation               |
-|                     | Functions         | ✅ Complete    | ⭐⭐⭐⭐⭐      | First-class functions mastered |
-|                     | Control Flow      | ✅ Complete    | ⭐⭐⭐⭐⭐      | All patterns understood        |
-| **Data Structures** | Lists             | ✅ Complete    | ⭐⭐⭐⭐⭐      | Comprehensions are powerful!   |
-|                     | Dictionaries      | ✅ Complete    | ⭐⭐⭐⭐⭐      | Use everywhere                 |
-|                     | Sets & Tuples     | ✅ Complete    | ⭐⭐⭐⭐       | Understand use cases           |
-| **OOP**             | Classes & Objects | ✅ Complete    | ⭐⭐⭐⭐⭐      | Production-ready               |
-|                     | Inheritance       | ✅ Complete    | ⭐⭐⭐⭐       | Understand patterns            |
-|                     | Decorators        | 📝 Planned     | ⭐⭐⭐        | Basic understanding            |
-| **Error Handling**  | Try/Except        | ✅ Complete    | ⭐⭐⭐⭐⭐      | Use in all production code     |
-|                     | Custom Exceptions | ✅ Complete    | ⭐⭐⭐⭐       | Created several                |
-| **File I/O**        | Text Files        | ✅ Complete    | ⭐⭐⭐⭐⭐      | Context managers mastered      |
-|                     | CSV/JSON          | ✅ Complete    | ⭐⭐⭐⭐⭐      | Use in projects                |
-| **Modern Tools**    | uv                | ✅ Complete    | ⭐⭐⭐⭐⭐      | Replaced pip entirely          |
-|                     | Ruff              | ✅ Complete    | ⭐⭐⭐⭐⭐      | Auto-format on save            |
-|                     | python-dotenv     | ✅ Complete    | ⭐⭐⭐⭐⭐      | Secrets management             |
-| **Data Analysis**   | pandas            | ✅ Complete    | ⭐⭐⭐⭐       | Core operations mastered       |
-|                     | matplotlib        | ✅ Complete    | ⭐⭐⭐⭐       | Create production charts       |
-|                     | Advanced pandas   | 🔄 In Progress | ⭐⭐⭐        | GroupBy, merge, pivot          |
-| **APIs**            | requests          | ✅ Complete    | ⭐⭐⭐⭐       | REST API integration           |
-|                     | Async/await       | 🔄 In Progress | ⭐⭐         | Learning asyncio               |
-| **Testing**         | pytest            | 📝 Planned     | ⭐⭐         | Basic tests written            |
-| **Advanced**        | Type Hints        | ✅ Complete    | ⭐⭐⭐⭐       | Use in new code                |
-|                     | Generators        | 📝 Planned     | ⭐⭐         | Basic understanding            |
-|                     | Context Managers  | 📝 Planned     | ⭐⭐⭐        | Use built-ins, creating own    |
+<!-- markdownlint-disable MD060 -->
+
+| Category            | Topic             | Status         | Confidence | Notes                          |
+| ------------------- | ----------------- | -------------- | ---------- | ------------------------------ |
+| **Fundamentals**    | Variables & Types | ✅ Complete    | ⭐⭐⭐⭐⭐ | Solid foundation               |
+|                     | Functions         | ✅ Complete    | ⭐⭐⭐⭐⭐ | First-class functions mastered |
+|                     | Control Flow      | ✅ Complete    | ⭐⭐⭐⭐⭐ | All patterns understood        |
+| **Data Structures** | Lists             | ✅ Complete    | ⭐⭐⭐⭐⭐ | Comprehensions are powerful!   |
+|                     | Dictionaries      | ✅ Complete    | ⭐⭐⭐⭐⭐ | Use everywhere                 |
+|                     | Sets & Tuples     | ✅ Complete    | ⭐⭐⭐⭐   | Understand use cases           |
+| **OOP**             | Classes & Objects | ✅ Complete    | ⭐⭐⭐⭐⭐ | Production-ready               |
+|                     | Inheritance       | ✅ Complete    | ⭐⭐⭐⭐   | Understand patterns            |
+|                     | Decorators        | 📝 Planned     | ⭐⭐⭐     | Basic understanding            |
+| **Error Handling**  | Try/Except        | ✅ Complete    | ⭐⭐⭐⭐⭐ | Use in all production code     |
+|                     | Custom Exceptions | ✅ Complete    | ⭐⭐⭐⭐   | Created several                |
+| **File I/O**        | Text Files        | ✅ Complete    | ⭐⭐⭐⭐⭐ | Context managers mastered      |
+|                     | CSV/JSON          | ✅ Complete    | ⭐⭐⭐⭐⭐ | Use in projects                |
+| **Modern Tools**    | uv                | ✅ Complete    | ⭐⭐⭐⭐⭐ | Replaced pip entirely          |
+|                     | Ruff              | ✅ Complete    | ⭐⭐⭐⭐⭐ | Auto-format on save            |
+|                     | python-dotenv     | ✅ Complete    | ⭐⭐⭐⭐⭐ | Secrets management             |
+| **Data Analysis**   | pandas            | ✅ Complete    | ⭐⭐⭐⭐   | Core operations mastered       |
+|                     | matplotlib        | ✅ Complete    | ⭐⭐⭐⭐   | Create production charts       |
+|                     | Advanced pandas   | 🔄 In Progress | ⭐⭐⭐     | GroupBy, merge, pivot          |
+
+<!-- markdownlint-enable MD060 -->
+
+| **APIs** | requests | ✅ Complete | ⭐⭐⭐⭐ | REST API integration |
+| | Async/await | 🔄 In Progress | ⭐⭐ | Learning asyncio |
+| **Testing** | pytest | 📝 Planned | ⭐⭐ | Basic tests written |
+| **Advanced** | Type Hints | ✅ Complete | ⭐⭐⭐⭐ | Use in new code |
+| | Generators | 📝 Planned | ⭐⭐ | Basic understanding |
+| | Context Managers | 📝 Planned | ⭐⭐⭐ | Use built-ins, creating own |
 
 **Legend:**
 
@@ -1416,7 +1427,7 @@ I'm always happy to connect with fellow learners and developers!
 **Find me on:**
 
 - 🐙 **GitHub:** [@Aashish-po](https://github.com/Aashish-po)
-- 💻 **LeetCode:** [aa__shish_07](https://leetcode.com/aa__shish_07/)
+- 💻 **LeetCode:** [aa\_\_shish_07](https://leetcode.com/aa__shish_07/)
 - 📧 **Email:** <poudelashish572@gmail.com>
 
 **My Other Projects:**
@@ -1466,13 +1477,13 @@ This isn't a finished product—it's a living document of my learning. As I grow
 
 Keep coding. Keep learning. Keep building.
 
-**Happy coding! 🐍**
+## Happy Coding
 
 ---
 
-*Last Updated: April 2026*  
-*Current Focus: Async programming, testing with pytest, FastAPI*  
-*Next Milestone: Building production-ready AI applications*
+_Last Updated: April 2026_  
+_Current Focus: Async programming, testing with pytest, FastAPI_  
+_Next Milestone: Building production-ready AI applications_
 
 ---
 
@@ -1509,13 +1520,9 @@ Keep coding. Keep learning. Keep building.
 
 ---
 
-<div align="center">
+Made with love by Aashish Paudel.
 
-**Made with ❤️ by Aashish Paudel**
-
-*Documenting my journey from C++ and JavaScript to Python mastery*
+Documenting my journey from C++ and JavaScript to Python mastery.
 
 [![GitHub followers](https://img.shields.io/github/followers/Aashish-po?style=social)](https://github.com/Aashish-po)
 [![Stars](https://img.shields.io/github/stars/Aashish-po/Learning_Python?style=social)](https://github.com/Aashish-po/Learning_Python)
-
-</div>
