@@ -825,6 +825,31 @@ uv run python -m sales_analyzer.main
 
 ---
 
+### 4. Mini Projects Collection
+
+**Status:** ✅ Complete | **Complexity:** ⭐⭐
+
+**What It Includes:**
+
+- [project/choose_your_adventure.py](project/choose_your_adventure.py) - branching story game
+- [project/madibs_generator.py](project/madibs_generator.py) - Mad Libs style prompt generator
+- [project/password_manager.py](project/password_manager.py) - simple CLI password vault (stores in [project/passwords.txt](project/passwords.txt))
+- [project/pig.py](project/pig.py) - Pig dice game
+- [project/quiz_game.py](project/quiz_game.py) - trivia quiz CLI
+- [project/random_number.py](project/random_number.py) - number guessing game
+- [project/rock_paper_sicssior.py](project/rock_paper_sicssior.py) - Rock Paper Scissors
+- [project/slot_machine.py](project/slot_machine.py) - slot machine simulator
+- [project/turtle__race.py](project/turtle__race.py) - turtle race animation (requires a GUI)
+- [project/wpm.py](project/wpm.py) - typing speed test
+
+**Try One:**
+
+```bash
+uv run python project/quiz_game.py
+```
+
+---
+
 ## 💡 Key Insights from My Journey
 
 ### 1. Python ≠ Simplified C++
@@ -1445,7 +1470,7 @@ Keep coding. Keep learning. Keep building.
 
 ---
 
-*Last Updated: March 2026*  
+*Last Updated: April 2026*  
 *Current Focus: Async programming, testing with pytest, FastAPI*  
 *Next Milestone: Building production-ready AI applications*
 
@@ -1468,6 +1493,7 @@ Keep coding. Keep learning. Keep building.
 - [Sales Analyzer](07-data-analysis/sales_analyzer/)
 - [API Examples](08-apis/)
 - [Exercises](10-exercises/)
+- [Mini Projects](project/)
 
 **Resources:**
 
