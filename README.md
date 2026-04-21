@@ -58,7 +58,7 @@ cd Learning_Python
 uv sync
 
 # Run any example
-uv run python 01-fundamentals/variables.py
+uv run python 01-fundamentals/variables_example.py
 
 # Run the sales analyzer project
 cd 07-data-analysis/sales_analyzer
@@ -831,15 +831,23 @@ uv run python -m sales_analyzer.main
 
 **What It Includes:**
 
+- [project/YT_video_downloder.py](project/YT_video_downloder.py) - YouTube downloader with file picker
+- [project/backup.py](project/backup.py) - scheduled backup script
 - [project/choose_your_adventure.py](project/choose_your_adventure.py) - branching story game
+- [project/currency_converter.py](project/currency_converter.py) - CLI currency converter
+- [project/get_game_data.py](project/get_game_data.py) - game directory organizer + metadata generator
 - [project/madibs_generator.py](project/madibs_generator.py) - Mad Libs style prompt generator
+- [project/nba_score.py](project/nba_score.py) - live NBA scoreboard fetcher
 - [project/password_manager.py](project/password_manager.py) - simple CLI password vault (stores in [project/passwords.txt](project/passwords.txt))
+- [project/path_finder.py](project/path_finder.py) - maze pathfinding visualization (curses)
 - [project/pig.py](project/pig.py) - Pig dice game
 - [project/quiz_game.py](project/quiz_game.py) - trivia quiz CLI
 - [project/random_number.py](project/random_number.py) - number guessing game
 - [project/rock_paper_sicssior.py](project/rock_paper_sicssior.py) - Rock Paper Scissors
+- [project/sales-analysis/](project/sales-analysis/) - sales analysis module set
 - [project/slot_machine.py](project/slot_machine.py) - slot machine simulator
 - [project/turtle__race.py](project/turtle__race.py) - turtle race animation (requires a GUI)
+- [project/weather/weather.py](project/weather/weather.py) - weather data explorer + charting
 - [project/wpm.py](project/wpm.py) - typing speed test
 
 **Try One:**
@@ -1483,6 +1491,7 @@ Keep coding. Keep learning. Keep building.
 - [Fundamentals](01-fundamentals/)
 - [Data Structures](02-data-structures/)
 - [OOP](03-oop/)
+- [Modules & Packages](04-modules-packages/)
 - [Error Handling](06-error-handling/)
 - [File Handling](05-file-handling/)
 - [Data Analysis](07-data-analysis/)
@@ -1492,6 +1501,7 @@ Keep coding. Keep learning. Keep building.
 
 - [Sales Analyzer](07-data-analysis/sales_analyzer/)
 - [API Examples](08-apis/)
+- [Learning Projects](09-projects/)
 - [Exercises](10-exercises/)
 - [Mini Projects](project/)
 
