@@ -2,7 +2,7 @@
 
 ## Step 1: Run Reorganization
 ```bash
-REORGANIZE.bat
+scripts/REORGANIZE.bat
 ```
 
 ## Step 2: Install Tools

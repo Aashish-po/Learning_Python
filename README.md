@@ -831,21 +831,21 @@ uv run python analyzer.py
 
 **What It Includes:**
 
-- [project/choose_your_adventure.py](project/choose_your_adventure.py) - branching story game
-- [project/madibs_generator.py](project/madibs_generator.py) - Mad Libs style prompt generator
-- [project/password_manager.py](project/password_manager.py) - simple CLI password vault (stores in [project/passwords.txt](project/passwords.txt))
-- [project/pig.py](project/pig.py) - Pig dice game
-- [project/quiz_game.py](project/quiz_game.py) - trivia quiz CLI
-- [project/random_number.py](project/random_number.py) - number guessing game
-- [project/rock_paper_sicssior.py](project/rock_paper_sicssior.py) - Rock Paper Scissors
-- [project/slot_machine.py](project/slot_machine.py) - slot machine simulator
-- [project/turtle__race.py](project/turtle__race.py) - turtle race animation (requires a GUI)
-- [project/wpm.py](project/wpm.py) - typing speed test
+- [10-exercises/practice/choose_your_adventure.py](10-exercises/practice/choose_your_adventure.py) - branching story game
+- [10-exercises/practice/madibs_generator.py](10-exercises/practice/madibs_generator.py) - Mad Libs style prompt generator
+- [05-file-handling/password_manager.py](05-file-handling/password_manager.py) - simple CLI password vault (stores in [05-file-handling/passwords.txt](05-file-handling/passwords.txt))
+- [10-exercises/practice/pig.py](10-exercises/practice/pig.py) - Pig dice game
+- [10-exercises/practice/quiz_game.py](10-exercises/practice/quiz_game.py) - trivia quiz CLI
+- [10-exercises/practice/random_number.py](10-exercises/practice/random_number.py) - number guessing game
+- [10-exercises/practice/rock_paper_scissors.py](10-exercises/practice/rock_paper_scissors.py) - Rock Paper Scissors
+- [10-exercises/practice/slot_machine.py](10-exercises/practice/slot_machine.py) - slot machine simulator
+- [10-exercises/practice/turtle__race.py](10-exercises/practice/turtle__race.py) - turtle race animation (requires a GUI)
+- [10-exercises/practice/wpm.py](10-exercises/practice/wpm.py) - typing speed test
 
 **Try One:**
 
 ```bash
-uv run python project/quiz_game.py
+uv run python 10-exercises/practice/quiz_game.py
 ```
 
 ---
@@ -1493,7 +1493,7 @@ Keep coding. Keep learning. Keep building.
 - [Sales Analyzer](07-data-analysis/sales_analyzer/)
 - [API Examples](08-apis/)
 - [Exercises](10-exercises/)
-- [Mini Projects](project/)
+- [Mini Projects](10-exercises/practice/)
 
 **Resources:**
 
