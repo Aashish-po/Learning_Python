@@ -23,7 +23,7 @@ Complete data analysis pipeline:
 - Create visualizations
 - Export reports
 
-**Location:** `sales-analyzer/`
+**Location:** `sales_analyzer/`
 
 ---
 

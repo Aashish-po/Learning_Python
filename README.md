@@ -58,11 +58,11 @@ cd Learning_Python
 uv sync
 
 # Run any example
-uv run python 01-fundamentals/variables.py
+uv run python 01-fundamentals/variables_example.py
 
 # Run the sales analyzer project
 cd 07-data-analysis/sales_analyzer
-uv run python -m sales_analyzer.main
+uv run python analyzer.py
 
 # Run tests
 uv run pytest
@@ -783,7 +783,7 @@ sales_analyzer/
 
 ```bash
 cd 07-data-analysis/sales_analyzer
-uv run python -m sales_analyzer.main
+uv run python analyzer.py
 ```
 
 **Significance:** This project bridges theory and practice. It's one thing to learn pandas syntax; it's another to build a complete analysis pipeline that handles real-world messiness.

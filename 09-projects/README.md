@@ -16,7 +16,7 @@ Full-featured applications combining multiple concepts.
 - Visualization
 - Report generation
 
-**Location:** `sales-analyzer/`
+**Location:** `sales_analyzer/`
 
 ---
 
