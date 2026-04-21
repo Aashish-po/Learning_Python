@@ -2,7 +2,6 @@
 
 from collections import namedtuple
 
-
 coordinates = (10, 20)
 print("Tuple:", coordinates)
 print("First value:", coordinates[0])
