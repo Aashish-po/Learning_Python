@@ -13,11 +13,13 @@
 I'm a passionate programmer transitioning from C++ and full-stack JavaScript development to Python, with a focus on AI and data science. This repository chronicles my complete learning journey, from fundamental syntax to building production-ready applications.
 
 **Connect with me:**
+
 - 🐙 GitHub: [@Aashish-po](https://github.com/Aashish-po)
 - 💻 LeetCode: [aa__shish_07](https://leetcode.com/aa__shish_07/)
-- 📧 Email: poudelashish572@gmail.com
+- 📧 Email: <poudelashish572@gmail.com>
 
 **My Background:**
+
 - **Strong Foundation:** C++ for algorithms and competitive programming
 - **Full-Stack Web:** JavaScript/TypeScript, React, React Native, Node.js, Express, tRPC
 - **Tools:** pnpm, VS Code, Git/GitHub, modern development workflows
@@ -30,12 +32,14 @@ I'm a passionate programmer transitioning from C++ and full-stack JavaScript dev
 **The Problem:** Most Python tutorials jump straight to syntax without context. If you already know programming, you don't need another "Hello World" guide.
 
 **The Solution:** This repository documents my **real learning journey** as an experienced programmer learning Python. It shows:
+
 - **What translates** from other languages (spoiler: a lot!)
 - **What's different** (whitespace matters, `self` everywhere, duck typing)
 - **What's better** (list comprehensions, context managers, `with` statements)
 - **What's powerful** (classes, decorators, generators, async/await)
 
 **Who This Helps:**
+
 - Programmers from C++, Java, JavaScript learning Python
 - Self-taught developers wanting structure
 - Students seeking real-world project examples
@@ -44,6 +48,7 @@ I'm a passionate programmer transitioning from C++ and full-stack JavaScript dev
 ---
 
 ## 🚀 Quick Start
+
 ```bash
 # Clone this repository
 git clone https://github.com/Aashish-po/Learning_Python.git
@@ -83,11 +88,13 @@ uv run pytest
 My journey progressed through these stages:
 
 ### Phase 1: Fundamentals (Week 1-2)
+
 **Status:** ✅ Complete
 
 Understanding Python's core syntax and philosophy.
 
 **Topics Covered:**
+
 - Variables and data types (dynamic typing vs C++'s static typing)
 - Control flow (if/else, loops - similar to other languages)
 - Functions (first-class citizens, unlike C++)
@@ -100,11 +107,13 @@ Understanding Python's core syntax and philosophy.
 ---
 
 ### Phase 2: Data Structures (Week 2-3)
+
 **Status:** ✅ Complete
 
 Mastering Python's built-in data structures and their unique features.
 
 **Topics Covered:**
+
 - **Lists:** Dynamic arrays with powerful methods (`.append()`, `.extend()`, slicing)
 - **Dictionaries:** Hash maps with clean syntax (`{}` vs JavaScript's `new Map()`)
 - **Sets:** Unique collections with mathematical operations
@@ -114,6 +123,7 @@ Mastering Python's built-in data structures and their unique features.
 **Key Insight:** List comprehensions replace 80% of my JavaScript `.map()` and `.filter()` calls with more readable code.
 
 **Example:**
+
 ```python
 # JavaScript approach
 const squares = numbers.map(x => x ** 2).filter(x => x % 2 === 0);
@@ -127,11 +137,13 @@ squares = [x**2 for x in numbers if x % 2 == 0]
 ---
 
 ### Phase 3: Object-Oriented Programming (Week 3-4)
+
 **Status:** ✅ Complete
 
 Building reusable, maintainable code with classes.
 
 **Topics Covered:**
+
 - **Class Basics:** `__init__`, `self`, instance vs class attributes
 - **Methods:** Instance methods, class methods, static methods
 - **Inheritance:** Building on existing classes (like C++ but simpler)
@@ -142,6 +154,7 @@ Building reusable, maintainable code with classes.
 **Major Insight:** Coming from functional JavaScript, I learned when classes actually improve code organization vs when they're overkill.
 
 **Decision Framework I Developed:**
+
 ```
 Use classes when:
 ✅ You need to maintain state between operations
@@ -160,11 +173,13 @@ Use functions when:
 ---
 
 ### Phase 4: Error Handling & Debugging (Week 4-5)
+
 **Status:** ✅ Complete
 
 Writing robust code that fails gracefully.
 
 **Topics Covered:**
+
 - **Try/Except Blocks:** Python's error handling (cleaner than C++'s try/catch)
 - **Specific Exceptions:** `ValueError`, `FileNotFoundError`, `KeyError`, etc.
 - **Custom Exceptions:** Creating meaningful error types
@@ -172,16 +187,19 @@ Writing robust code that fails gracefully.
 - **Defensive Programming:** Validate early, fail fast, log everything
 
 **Real-World Application:** Added comprehensive error handling to sales analyzer:
+
 - File not found? Clear error message + path hint
 - Invalid CSV? Show exact row with issue
 - Network errors? Retry with exponential backoff
 
 **Before:**
+
 ```python
 data = pd.read_csv(filepath)  # Crashes with cryptic error
 ```
 
 **After:**
+
 ```python
 try:
     data = pd.read_csv(filepath)
@@ -202,11 +220,13 @@ except pd.errors.ParserError as e:
 ---
 
 ### Phase 5: File Handling & Data Formats (Week 5)
+
 **Status:** ✅ Complete
 
 Working with external data sources.
 
 **Topics Covered:**
+
 - **Text Files:** Reading/writing with context managers (`with` statement)
 - **CSV Processing:** Using `csv` module and `pandas`
 - **JSON:** Python's native support vs JavaScript
@@ -215,6 +235,7 @@ Working with external data sources.
 **Key Learning:** Context managers (`with` statements) are Python's way of ensuring cleanup, like RAII in C++ but more explicit.
 
 **Pattern I Use Everywhere:**
+
 ```python
 from pathlib import Path
 
@@ -234,11 +255,13 @@ with open('data.txt', 'r') as f:
 ---
 
 ### Phase 6: Modern Python Development (Week 6)
+
 **Status:** ✅ Complete
 
 Professional development tools and workflows.
 
 **Topics Covered:**
+
 - **uv Package Manager:** 10-100x faster than pip (like pnpm for Python)
 - **Ruff Linter/Formatter:** One tool for linting + formatting (replaces ESLint + Prettier)
 - **Environment Variables:** `python-dotenv` for secrets management
@@ -248,6 +271,7 @@ Professional development tools and workflows.
 **Biggest Impact:** Switching from pip to uv reduced my dependency install time from 2 minutes to 5 seconds!
 
 **My Modern Python Stack:**
+
 ```toml
 # pyproject.toml - One file for everything
 [project]
@@ -266,23 +290,26 @@ dev-dependencies = [
 ```
 
 **Comparison to My JavaScript Workflow:**
-| Task | JavaScript (pnpm) | Python (uv) |
-|------|------------------|-------------|
-| Add package | `pnpm add express` | `uv add flask` |
-| Install deps | `pnpm install` | `uv sync` |
-| Run script | `pnpm run dev` | `uv run python main.py` |
-| Lint + format | `eslint + prettier` | `ruff` (one tool!) |
+
+| Task          | JavaScript (pnpm)   | Python (uv)             |
+| ------------- | ------------------- | ----------------------- |
+| Add package   | `pnpm add express`  | `uv add flask`          |
+| Install deps  | `pnpm install`      | `uv sync`               |
+| Run script    | `pnpm run dev`      | `uv run python main.py` |
+| Lint + format | `eslint + prettier` | `ruff` (one tool!)      |
 
 📁 **Code:** Configuration files in root directory
 
 ---
 
 ### Phase 7: Data Analysis & Visualization (Week 6-7)
+
 **Status:** ✅ Complete
 
 Turning data into insights with pandas and matplotlib.
 
 **Topics Covered:**
+
 - **Pandas Basics:** DataFrames, Series, reading CSV files
 - **Data Cleaning:** Handling missing values, duplicates, invalid data
 - **Data Analysis:** Grouping, aggregation, statistical functions
@@ -290,6 +317,7 @@ Turning data into insights with pandas and matplotlib.
 - **Real Project:** Complete sales analysis pipeline
 
 **Project Highlight:** Built a production-ready sales analysis tool that:
+
 - Loads and validates CSV data
 - Cleans data (removes duplicates, invalid entries)
 - Calculates metrics (revenue, top products, trends)
@@ -305,11 +333,13 @@ Turning data into insights with pandas and matplotlib.
 ---
 
 ### Phase 8: APIs & Integration (Week 7-8)
+
 **Status:** ✅ Complete
 
 Connecting Python to the outside world.
 
 **Topics Covered:**
+
 - **HTTP Requests:** `requests` library for REST APIs
 - **JSON Handling:** Parsing API responses and configuration objects
 - **Authentication:** API keys, tokens, OAuth
@@ -323,11 +353,13 @@ Connecting Python to the outside world.
 ---
 
 ### Phase 9: Testing & Quality Assurance (Week 8)
+
 **Status:** 🔄 In Progress
 
 Ensuring code reliability and maintainability.
 
 **Topics Covered:**
+
 - **Pytest Basics:** Writing simple assertions and smoke tests
 - **Project Structure:** Organizing tests in a dedicated `tests/` directory
 - **Automation:** Integrating linting (Ruff) and testing into the workflow
@@ -343,7 +375,9 @@ Ensuring code reliability and maintainability.
 ### Core Python (Fundamentals)
 
 #### ✅ Variables & Data Types
+
 **What I Learned:**
+
 - Dynamic typing (no need to declare types like C++)
 - Type conversion and type checking
 - Mutable vs immutable types
@@ -351,6 +385,7 @@ Ensuring code reliability and maintainability.
 **Significance:** Understanding mutability prevents subtle bugs, especially with lists as default arguments.
 
 **Example:**
+
 ```python
 # Dangerous: Mutable default argument
 def add_item(item, items=[]):  # WRONG! Same list reused!
@@ -368,7 +403,9 @@ def add_item(item, items=None):
 ---
 
 #### ✅ Functions
+
 **What I Learned:**
+
 - Function definition and parameters
 - Default arguments and keyword arguments
 - `*args` and `**kwargs` for variable arguments
@@ -378,6 +415,7 @@ def add_item(item, items=None):
 **Significance:** Functions are the building blocks of reusable code.
 
 **Pattern I Use:**
+
 ```python
 def process_data(
     data: list,
@@ -403,7 +441,9 @@ def process_data(
 ---
 
 #### ✅ Control Flow
+
 **What I Learned:**
+
 - `if/elif/else` statements
 - `for` and `while` loops
 - `break`, `continue`, `pass`
@@ -416,7 +456,9 @@ def process_data(
 ### Data Structures
 
 #### ✅ Lists
+
 **Mastered Techniques:**
+
 - List creation and manipulation
 - Slicing: `list[start:end:step]`
 - List methods: `.append()`, `.extend()`, `.insert()`, `.remove()`, `.pop()`
@@ -424,6 +466,7 @@ def process_data(
 - Nested lists and 2D arrays
 
 **Favorite Pattern:**
+
 ```python
 # Filter and transform in one line
 results = [transform(item) for item in data if condition(item)]
@@ -435,7 +478,9 @@ matrix = [[row[i] for i in range(len(row))] for row in data]
 ---
 
 #### ✅ Dictionaries
+
 **Mastered Techniques:**
+
 - Dictionary creation and access
 - `.get()` with defaults (prevents KeyError)
 - `.items()`, `.keys()`, `.values()` for iteration
@@ -443,6 +488,7 @@ matrix = [[row[i] for i in range(len(row))] for row in data]
 - Nested dictionaries for complex data
 
 **Pattern I Use Everywhere:**
+
 ```python
 # Safe access with default
 value = my_dict.get('key', 'default_value')
@@ -456,7 +502,9 @@ config = {k: v for k, v in raw_config.items() if v is not None}
 ### Object-Oriented Programming
 
 #### ✅ Classes & Objects
+
 **Mastered Concepts:**
+
 - Class definition with `class` keyword
 - `__init__()` constructor
 - Instance attributes vs class attributes
@@ -464,6 +512,7 @@ config = {k: v for k, v in raw_config.items() if v is not None}
 - Method definition
 
 **Real Application:** My `SalesAnalyzer` class organizes analysis logic:
+
 ```python
 class SalesAnalyzer:
     """Analyze sales data with multiple methods."""
@@ -490,7 +539,9 @@ class SalesAnalyzer:
 ---
 
 #### ✅ Methods & Attributes
+
 **Mastered Concepts:**
+
 - Instance methods (operate on object data)
 - Class methods (`@classmethod` decorator)
 - Static methods (`@staticmethod` decorator)
@@ -500,20 +551,24 @@ class SalesAnalyzer:
 ---
 
 #### ✅ When to Use Classes
+
 **Decision Framework I Developed:**
 
 Use **classes** when:
+
 - ✅ Maintaining state between operations
 - ✅ Passing same data to multiple functions
 - ✅ Creating multiple instances
 - ✅ Modeling real-world objects
 
 Use **functions** when:
+
 - ✅ Simple transformations
 - ✅ Stateless operations
 - ✅ One-off calculations
 
 **Example:**
+
 ```python
 # Bad: Class with one method
 class Calculator:
@@ -540,7 +595,9 @@ class ShoppingCart:
 ### Error Handling
 
 #### ✅ Try/Except Blocks
+
 **Mastered Patterns:**
+
 - Catching specific exceptions
 - Multiple exception handling
 - `else` clause (runs if no exception)
@@ -548,6 +605,7 @@ class ShoppingCart:
 - Creating custom exceptions
 
 **Production Pattern:**
+
 ```python
 def load_config(filepath):
     """Load configuration with comprehensive error handling."""
@@ -575,13 +633,16 @@ def load_config(filepath):
 ### Modern Development Tools
 
 #### ✅ uv Package Manager
+
 **Why I Use It:**
+
 - 10-100x faster than pip
 - Single tool for packages, virtual environments, Python versions
 - Lock files for reproducibility
 - Drop-in replacement for pip
 
 **My Workflow:**
+
 ```bash
 uv init my-project        # Create new project
 uv add pandas requests    # Add dependencies
@@ -592,13 +653,16 @@ uv run python main.py     # Run code
 ---
 
 #### ✅ Ruff (Linting & Formatting)
+
 **Why I Use It:**
+
 - Replaces ESLint + Prettier + isort
 - 10-100x faster than traditional tools
 - Automatic fixes for most issues
 - VS Code integration
 
 **Configuration:**
+
 ```toml
 [tool.ruff]
 line-length = 100
@@ -611,13 +675,16 @@ select = ["E", "F", "I", "N", "W"]
 ---
 
 #### ✅ Environment Variables
+
 **Best Practices I Follow:**
+
 - Never commit `.env` files
 - Always commit `.env.example`
 - Validate required variables on startup
 - Use `python-dotenv` for loading
 
 **Pattern:**
+
 ```python
 from dotenv import load_dotenv
 import os
@@ -634,7 +701,9 @@ if not API_KEY:
 ### Data Analysis
 
 #### ✅ Pandas
+
 **Core Skills:**
+
 - Reading CSV files
 - DataFrame manipulation
 - Data cleaning (dropna, drop_duplicates)
@@ -642,6 +711,7 @@ if not API_KEY:
 - Filtering and selecting
 
 **Example:**
+
 ```python
 # Load and clean data
 df = pd.read_csv('sales.csv')
@@ -656,7 +726,9 @@ top_products = df.groupby('product')['total'].sum().nlargest(5)
 ---
 
 #### ✅ Matplotlib
+
 **Visualization Skills:**
+
 - Bar charts for comparisons
 - Line charts for trends
 - Customizing plots (titles, labels, colors)
@@ -667,12 +739,14 @@ top_products = df.groupby('product')['total'].sum().nlargest(5)
 ## 🏆 Projects Showcase
 
 ### 1. Sales Analysis System
+
 **Status:** ✅ Complete | **Complexity:** ⭐⭐⭐⭐
 
 **What It Does:**
 A production-ready data analysis tool that processes sales data, generates insights, and creates visualizations.
 
 **Technical Highlights:**
+
 - **Object-Oriented Design:** `SalesAnalyzer` class with method chaining
 - **Error Handling:** Comprehensive try/except blocks with logging
 - **Data Pipeline:** Load → Clean → Analyze → Visualize → Export
@@ -680,6 +754,7 @@ A production-ready data analysis tool that processes sales data, generates insig
 - **Professional Output:** CSV exports, text reports, PNG charts
 
 **Code Structure:**
+
 ```
 sales_analyzer/
 ├── __init__.py
@@ -697,6 +772,7 @@ sales_analyzer/
 ```
 
 **What I Learned:**
+
 - Organizing large projects with multiple modules
 - Separating concerns (data loading, analysis, visualization)
 - Writing maintainable, reusable code
@@ -704,6 +780,7 @@ sales_analyzer/
 - Testing with real data
 
 **Try It:**
+
 ```bash
 cd 07-data-analysis/sales_analyzer
 uv run python -m sales_analyzer.main
@@ -714,15 +791,18 @@ uv run python -m sales_analyzer.main
 ---
 
 ### 2. API Integration Examples
+
 **Status:** 🔄 In Progress | **Complexity:** ⭐⭐⭐
 
 **What It Includes:**
+
 - REST API client with error handling
 - OpenAI integration for AI responses
 - Rate limiting and retry logic
 - Authentication patterns
 
 **What I'm Learning:**
+
 - Async programming with `asyncio`
 - API best practices
 - Error handling for network requests
@@ -731,9 +811,11 @@ uv run python -m sales_analyzer.main
 ---
 
 ### 3. Learning Exercises Collection
+
 **Status:** 🔄 Ongoing | **Complexity:** ⭐⭐
 
 **What It Includes:**
+
 - LeetCode solutions in Python
 - Algorithm implementations
 - Data structure practice
@@ -746,16 +828,20 @@ uv run python -m sales_analyzer.main
 ## 💡 Key Insights from My Journey
 
 ### 1. Python ≠ Simplified C++
+
 **Initial Assumption:** Python is just C++ with simpler syntax.
 
 **Reality:** Python has fundamentally different philosophies:
+
 - **Duck typing** vs static typing: "If it walks like a duck..."
 - **Everything is an object** (even functions!)
 - **Significant whitespace** enforces readability
 - **Batteries included** (rich standard library)
 
 ### 2. Pythonic ≠ Verbose
+
 Coming from JavaScript, I initially wrote code like this:
+
 ```python
 # Not Pythonic
 result = []
@@ -770,6 +856,7 @@ result = [item * 2 for item in items if item > 0]
 **Lesson:** Python rewards learning idiomatic patterns. Comprehensions aren't just shorter—they're faster and more readable.
 
 ### 3. Classes: Powerful but Not Always Needed
+
 **From JavaScript:** Used classes everywhere (React components made me love them)
 
 **Python Taught Me:** Functions can often do the job better.
@@ -777,6 +864,7 @@ result = [item * 2 for item in items if item > 0]
 **The Test:** If your class has one method, it should probably be a function.
 
 ### 4. Error Handling is Not Optional
+
 **Bad Habit from Scripting:** Assuming happy path
 
 **Production Reality:** Files are missing, APIs are down, users enter garbage data.
@@ -784,16 +872,19 @@ result = [item * 2 for item in items if item > 0]
 **New Standard:** Every function that touches external resources has error handling.
 
 ### 5. Modern Tools Matter
+
 **Before:** Using pip, manual virtual environments, no linting
 
 **After:** Using uv, Ruff, automatic formatting
 
-**Impact:** 
+**Impact:**
+
 - Setup time: 10 minutes → 30 seconds
 - Formatting: Manual → Automatic
 - Linting: Ignored → On-save
 
 ### 6. The Best Teacher is Building
+
 **Tutorials:** Taught me syntax
 
 **Projects:** Taught me programming
@@ -805,31 +896,37 @@ result = [item * 2 for item in items if item > 0]
 ## 🛠️ Tech Stack
 
 ### Core Python
+
 - **Python 3.12** - Latest stable version
 - **Type Hints** - Optional static typing for clarity
 
 ### Package Management
+
 - **uv** - Modern, fast package manager (10-100x faster than pip)
 - **pyproject.toml** - Single configuration file
 
 ### Code Quality
+
 - **Ruff** - Linting and formatting (replaces Black, isort, Flake8)
 - **mypy** - Static type checking
 - **pytest** - Testing framework
 
 ### Data & Analysis
+
 - **pandas** - Data manipulation and analysis
 - **numpy** - Numerical computing
 - **matplotlib** - Data visualization
 - **seaborn** - Statistical visualization
 
 ### APIs & Integration
+
 - **requests** - HTTP library
 - **python-dotenv** - Environment variable management
 - **openai** - OpenAI API client
 - **anthropic** - Claude API client
 
 ### Development Tools
+
 - **VS Code** - Editor with Python extension
 - **Git/GitHub** - Version control
 - **GitHub CLI** - Repository management
@@ -839,25 +936,30 @@ result = [item * 2 for item in items if item > 0]
 ## 📚 Resources That Helped
 
 ### Official Documentation
+
 - [Python Docs](https://docs.python.org/3/) - Comprehensive reference
 - [Python Tutorial](https://docs.python.org/3/tutorial/) - Official guide
 - [PEP 8](https://peps.python.org/pep-0008/) - Style guide
 
 ### Learning Platforms
+
 - [DataLumina Python Course](https://python.datalumina.com/) - My primary learning resource
 - [Real Python](https://realpython.com/) - Excellent tutorials
 - [Python Morsels](https://www.pythonmorsels.com/) - Weekly Python exercises
 
 ### Books
+
 - *Fluent Python* by Luciano Ramalho - Deep dive into Pythonic code
 - *Python Cookbook* by David Beazley - Practical recipes
 
 ### Tools & Libraries
+
 - [uv Documentation](https://github.com/astral-sh/uv) - Modern package manager
 - [Ruff Documentation](https://docs.astral.sh/ruff/) - Linter and formatter
 - [Pandas Documentation](https://pandas.pydata.org/docs/) - Data analysis
 
 ### Communities
+
 - [r/learnpython](https://www.reddit.com/r/learnpython/) - Helpful community
 - [Python Discord](https://pythondiscord.com/) - Active support
 
@@ -868,9 +970,11 @@ result = [item * 2 for item in items if item > 0]
 ### Immediate Goals (Next 2 Weeks)
 
 #### 1. Testing with pytest
+
 **Why:** Untested code is broken code waiting to happen.
 
 **Plan:**
+
 - Learn pytest basics (fixtures, parametrize)
 - Add tests to sales analyzer
 - Practice TDD (test-driven development)
@@ -879,9 +983,11 @@ result = [item * 2 for item in items if item > 0]
 ---
 
 #### 2. Async Programming
+
 **Why:** Modern APIs and web scraping need async.
 
 **Plan:**
+
 - Master `async`/`await` syntax
 - Use `asyncio` for concurrent requests
 - Build async API client
@@ -890,9 +996,11 @@ result = [item * 2 for item in items if item > 0]
 ---
 
 #### 3. Advanced OOP
+
 **Why:** Decorators and metaclasses unlock Python's power.
 
 **Plan:**
+
 - Function decorators (`@property`, `@staticmethod`)
 - Class decorators
 - Context managers (`with` statement internals)
@@ -903,9 +1011,11 @@ result = [item * 2 for item in items if item > 0]
 ### Medium-Term Goals (1-2 Months)
 
 #### 4. Web Development with FastAPI
+
 **Why:** FastAPI is modern, fast, and uses Python's type hints beautifully.
 
 **Projects:**
+
 - Build REST API for sales data
 - Add authentication (JWT)
 - Deploy to production (Railway/Vercel)
@@ -913,9 +1023,11 @@ result = [item * 2 for item in items if item > 0]
 ---
 
 #### 5. Machine Learning Basics
+
 **Why:** AI is why I'm learning Python.
 
 **Plan:**
+
 - scikit-learn fundamentals
 - Model training and evaluation
 - Real dataset projects
@@ -924,9 +1036,11 @@ result = [item * 2 for item in items if item > 0]
 ---
 
 #### 6. LangChain & RAG
+
 **Why:** Building intelligent AI applications.
 
 **Projects:**
+
 - Document Q&A system
 - Custom knowledge base
 - RAG implementation
@@ -937,18 +1051,21 @@ result = [item * 2 for item in items if item > 0]
 ### Long-Term Vision (3-6 Months)
 
 #### 7. Deep Learning with PyTorch
+
 - Neural network basics
 - Computer vision
 - NLP with transformers
 - Fine-tuning LLMs
 
 #### 8. Production Python
+
 - Docker containerization
 - CI/CD pipelines
 - Monitoring and logging
 - Database integration (PostgreSQL, Redis)
 
 #### 9. Open Source Contribution
+
 - Contribute to Python libraries
 - Build my own packages
 - Share knowledge through blog posts
@@ -958,13 +1075,16 @@ result = [item * 2 for item in items if item > 0]
 ## 🚀 How to Use This Repository
 
 ### For Beginners
+
 **Start Here:**
+
 1. `01-fundamentals/` - Basic syntax and concepts
 2. `02-data-structures/` - Lists, dicts, sets
 3. `03-oop/` - Classes and objects
 4. Work through exercises in each directory
 
 **Learn By Doing:**
+
 - Read the code
 - Run the examples
 - Modify and experiment
@@ -973,12 +1093,15 @@ result = [item * 2 for item in items if item > 0]
 ---
 
 ### For Experienced Programmers
+
 **Skip the Basics:**
+
 - Jump to `03-oop/` for Python-specific OOP
 - Check `06-error-handling/` for Pythonic patterns
 - Review modern tools in root config files
 
 **Compare Approaches:**
+
 - See how I translated C++/JavaScript patterns
 - Learn what's different in Python
 - Understand why Python does it that way
@@ -986,12 +1109,15 @@ result = [item * 2 for item in items if item > 0]
 ---
 
 ### For Project Ideas
+
 **Clone and Adapt:**
+
 - Sales analyzer as template for data projects
 - API examples for integration work
 - Error handling patterns for production code
 
 **Modify for Your Domain:**
+
 - Change data source (your CSV, API, database)
 - Add features (new metrics, visualizations)
 - Integrate with your projects
@@ -1000,35 +1126,36 @@ result = [item * 2 for item in items if item > 0]
 
 ## 📊 Progress Tracking
 
-| Category | Topic | Status | Confidence | Notes |
-|----------|-------|--------|------------|-------|
-| **Fundamentals** | Variables & Types | ✅ Complete | ⭐⭐⭐⭐⭐ | Solid foundation |
-| | Functions | ✅ Complete | ⭐⭐⭐⭐⭐ | First-class functions mastered |
-| | Control Flow | ✅ Complete | ⭐⭐⭐⭐⭐ | All patterns understood |
-| **Data Structures** | Lists | ✅ Complete | ⭐⭐⭐⭐⭐ | Comprehensions are powerful! |
-| | Dictionaries | ✅ Complete | ⭐⭐⭐⭐⭐ | Use everywhere |
-| | Sets & Tuples | ✅ Complete | ⭐⭐⭐⭐ | Understand use cases |
-| **OOP** | Classes & Objects | ✅ Complete | ⭐⭐⭐⭐⭐ | Production-ready |
-| | Inheritance | ✅ Complete | ⭐⭐⭐⭐ | Understand patterns |
-| | Decorators | 📝 Planned | ⭐⭐⭐ | Basic understanding |
-| **Error Handling** | Try/Except | ✅ Complete | ⭐⭐⭐⭐⭐ | Use in all production code |
-| | Custom Exceptions | ✅ Complete | ⭐⭐⭐⭐ | Created several |
-| **File I/O** | Text Files | ✅ Complete | ⭐⭐⭐⭐⭐ | Context managers mastered |
-| | CSV/JSON | ✅ Complete | ⭐⭐⭐⭐⭐ | Use in projects |
-| **Modern Tools** | uv | ✅ Complete | ⭐⭐⭐⭐⭐ | Replaced pip entirely |
-| | Ruff | ✅ Complete | ⭐⭐⭐⭐⭐ | Auto-format on save |
-| | python-dotenv | ✅ Complete | ⭐⭐⭐⭐⭐ | Secrets management |
-| **Data Analysis** | pandas | ✅ Complete | ⭐⭐⭐⭐ | Core operations mastered |
-| | matplotlib | ✅ Complete | ⭐⭐⭐⭐ | Create production charts |
-| | Advanced pandas | 🔄 In Progress | ⭐⭐⭐ | GroupBy, merge, pivot |
-| **APIs** | requests | ✅ Complete | ⭐⭐⭐⭐ | REST API integration |
-| | Async/await | 🔄 In Progress | ⭐⭐ | Learning asyncio |
-| **Testing** | pytest | 📝 Planned | ⭐⭐ | Basic tests written |
-| **Advanced** | Type Hints | ✅ Complete | ⭐⭐⭐⭐ | Use in new code |
-| | Generators | 📝 Planned | ⭐⭐ | Basic understanding |
-| | Context Managers | 📝 Planned | ⭐⭐⭐ | Use built-ins, creating own |
+| Category            | Topic             | Status        | Confidence | Notes                          |
+| ------------------- | ----------------- | ------------- | ---------- | ------------------------------ |
+| **Fundamentals**    | Variables & Types | ✅ Complete    | ⭐⭐⭐⭐⭐      | Solid foundation               |
+|                     | Functions         | ✅ Complete    | ⭐⭐⭐⭐⭐      | First-class functions mastered |
+|                     | Control Flow      | ✅ Complete    | ⭐⭐⭐⭐⭐      | All patterns understood        |
+| **Data Structures** | Lists             | ✅ Complete    | ⭐⭐⭐⭐⭐      | Comprehensions are powerful!   |
+|                     | Dictionaries      | ✅ Complete    | ⭐⭐⭐⭐⭐      | Use everywhere                 |
+|                     | Sets & Tuples     | ✅ Complete    | ⭐⭐⭐⭐       | Understand use cases           |
+| **OOP**             | Classes & Objects | ✅ Complete    | ⭐⭐⭐⭐⭐      | Production-ready               |
+|                     | Inheritance       | ✅ Complete    | ⭐⭐⭐⭐       | Understand patterns            |
+|                     | Decorators        | 📝 Planned     | ⭐⭐⭐        | Basic understanding            |
+| **Error Handling**  | Try/Except        | ✅ Complete    | ⭐⭐⭐⭐⭐      | Use in all production code     |
+|                     | Custom Exceptions | ✅ Complete    | ⭐⭐⭐⭐       | Created several                |
+| **File I/O**        | Text Files        | ✅ Complete    | ⭐⭐⭐⭐⭐      | Context managers mastered      |
+|                     | CSV/JSON          | ✅ Complete    | ⭐⭐⭐⭐⭐      | Use in projects                |
+| **Modern Tools**    | uv                | ✅ Complete    | ⭐⭐⭐⭐⭐      | Replaced pip entirely          |
+|                     | Ruff              | ✅ Complete    | ⭐⭐⭐⭐⭐      | Auto-format on save            |
+|                     | python-dotenv     | ✅ Complete    | ⭐⭐⭐⭐⭐      | Secrets management             |
+| **Data Analysis**   | pandas            | ✅ Complete    | ⭐⭐⭐⭐       | Core operations mastered       |
+|                     | matplotlib        | ✅ Complete    | ⭐⭐⭐⭐       | Create production charts       |
+|                     | Advanced pandas   | 🔄 In Progress | ⭐⭐⭐        | GroupBy, merge, pivot          |
+| **APIs**            | requests          | ✅ Complete    | ⭐⭐⭐⭐       | REST API integration           |
+|                     | Async/await       | 🔄 In Progress | ⭐⭐         | Learning asyncio               |
+| **Testing**         | pytest            | 📝 Planned     | ⭐⭐         | Basic tests written            |
+| **Advanced**        | Type Hints        | ✅ Complete    | ⭐⭐⭐⭐       | Use in new code                |
+|                     | Generators        | 📝 Planned     | ⭐⭐         | Basic understanding            |
+|                     | Context Managers  | 📝 Planned     | ⭐⭐⭐        | Use built-ins, creating own    |
 
 **Legend:**
+
 - ✅ Complete - Confident using in production
 - 🔄 In Progress - Learning actively
 - 📝 Planned - Next on roadmap
@@ -1046,9 +1173,11 @@ Based on my journey, here are projects that teach effectively:
 ### Beginner Projects
 
 #### 1. **Personal Budget Tracker**
+
 **Skills:** File I/O, CSV, basic calculations, dictionaries
 
 **Features:**
+
 - Add income/expenses
 - Categorize transactions
 - Calculate totals by category
@@ -1059,9 +1188,11 @@ Based on my journey, here are projects that teach effectively:
 ---
 
 #### 2. **Todo List CLI**
+
 **Skills:** Lists, file persistence, user input, basic classes
 
 **Features:**
+
 - Add/remove/complete tasks
 - List all tasks
 - Filter by status
@@ -1072,9 +1203,11 @@ Based on my journey, here are projects that teach effectively:
 ---
 
 #### 3. **Weather Dashboard**
+
 **Skills:** APIs, JSON, error handling, data formatting
 
 **Features:**
+
 - Fetch weather from API
 - Display current conditions
 - Show 5-day forecast
@@ -1087,9 +1220,11 @@ Based on my journey, here are projects that teach effectively:
 ### Intermediate Projects
 
 #### 4. **Data Analysis Tool** (Like My Sales Analyzer)
+
 **Skills:** pandas, matplotlib, classes, error handling, file I/O
 
 **Features:**
+
 - Load CSV data
 - Clean and validate
 - Calculate metrics
@@ -1101,9 +1236,11 @@ Based on my journey, here are projects that teach effectively:
 ---
 
 #### 5. **Web Scraper**
+
 **Skills:** requests, BeautifulSoup, error handling, data storage
 
 **Features:**
+
 - Scrape product prices
 - Extract article content
 - Handle pagination
@@ -1114,9 +1251,11 @@ Based on my journey, here are projects that teach effectively:
 ---
 
 #### 6. **REST API with FastAPI**
+
 **Skills:** FastAPI, async, databases, authentication
 
 **Features:**
+
 - CRUD operations
 - User authentication
 - Data validation
@@ -1129,9 +1268,11 @@ Based on my journey, here are projects that teach effectively:
 ### Advanced Projects
 
 #### 7. **RAG System**
+
 **Skills:** LangChain, vector databases, LLMs, embeddings
 
 **Features:**
+
 - Document ingestion
 - Vector storage
 - Semantic search
@@ -1142,9 +1283,11 @@ Based on my journey, here are projects that teach effectively:
 ---
 
 #### 8. **ML Model Deployment**
+
 **Skills:** scikit-learn, Flask/FastAPI, Docker, deployment
 
 **Features:**
+
 - Train ML model
 - Create API endpoint
 - Dockerize application
@@ -1155,9 +1298,11 @@ Based on my journey, here are projects that teach effectively:
 ---
 
 #### 9. **Real-Time Dashboard**
+
 **Skills:** WebSockets, async, databases, frontend integration
 
 **Features:**
+
 - Live data updates
 - Multiple data sources
 - Interactive visualizations
@@ -1172,22 +1317,26 @@ Based on my journey, here are projects that teach effectively:
 This is a personal learning repository, but I welcome:
 
 ### Suggestions
+
 - Better ways to implement something
 - Python idioms I missed
 - Resource recommendations
 - Project ideas
 
 ### Issues
+
 - Errors in code
 - Broken examples
 - Unclear documentation
 
 ### Discussions
+
 - Your learning journey
 - Comparing approaches (C++, Java, JS → Python)
 - Best practices
 
 **How to Contribute:**
+
 1. Open an issue for discussion
 2. Fork and create a pull request
 3. Reach out directly
@@ -1199,12 +1348,14 @@ This is a personal learning repository, but I welcome:
 MIT License - Use this code for your learning!
 
 **Permissions:**
+
 - ✅ Use in personal projects
 - ✅ Modify and adapt
 - ✅ Learn from examples
 - ✅ Share with others
 
 **Conditions:**
+
 - Include license notice
 - Don't claim as your own
 - Use at your own risk
@@ -1214,16 +1365,19 @@ MIT License - Use this code for your learning!
 ## 🙏 Acknowledgments
 
 **Learning Resources:**
+
 - DataLumina Python Course - Structured learning path
 - Python community - Helpful and welcoming
 - Real Python - Excellent tutorials
 
 **Tools:**
+
 - Astral (uv, Ruff) - Modern Python tooling
 - VS Code team - Best Python editor
 - GitHub - Code hosting and collaboration
 
 **Inspiration:**
+
 - Every programmer who shares their journey
 - Open source contributors
 - My programming mentors
@@ -1235,16 +1389,19 @@ MIT License - Use this code for your learning!
 I'm always happy to connect with fellow learners and developers!
 
 **Find me on:**
+
 - 🐙 **GitHub:** [@Aashish-po](https://github.com/Aashish-po)
 - 💻 **LeetCode:** [aa__shish_07](https://leetcode.com/aa__shish_07/)
-- 📧 **Email:** poudelashish572@gmail.com
+- 📧 **Email:** <poudelashish572@gmail.com>
 
 **My Other Projects:**
+
 - **AI Study Assistant** - React Native + Node.js application
 - **TicketStream** - SaaS helpdesk platform
 - Check out my GitHub for more!
 
 **Want to discuss:**
+
 - Python learning strategies
 - C++/JavaScript → Python transition
 - AI/ML development
@@ -1297,6 +1454,7 @@ Keep coding. Keep learning. Keep building.
 ## 🗺️ Quick Navigation
 
 **Learning Materials:**
+
 - [Fundamentals](01-fundamentals/)
 - [Data Structures](02-data-structures/)
 - [OOP](03-oop/)
@@ -1306,16 +1464,19 @@ Keep coding. Keep learning. Keep building.
 - [APIs](08-apis/)
 
 **Projects:**
+
 - [Sales Analyzer](07-data-analysis/sales_analyzer/)
 - [API Examples](08-apis/)
 - [Exercises](10-exercises/)
 
 **Resources:**
+
 - [Cheatsheet](notes/python-cheatsheet.md)
 - [Best Practices](notes/best-practices.md)
 - [Resources List](notes/resources.md)
 
 **Configuration:**
+
 - [pyproject.toml](pyproject.toml)
 - [VS Code Settings](.vscode/settings.json)
 - [Git Ignore](.gitignore)
