@@ -5,11 +5,13 @@ Full-featured applications combining multiple concepts.
 ## 📁 Projects
 
 ### 1. Sales Analyzer
+
 **Status:** ✅ Complete  
 **Technologies:** pandas, matplotlib, OOP  
 **Description:** Complete data analysis pipeline
 
 **Features:**
+
 - CSV data loading and validation
 - Data cleaning
 - Statistical analysis
@@ -21,6 +23,7 @@ Full-featured applications combining multiple concepts.
 ---
 
 ### 2. Weather Dashboard
+
 **Status:** ✅ Complete  
 **Technologies:** requests, matplotlib  
 **Description:** Weather data fetching and visualization
@@ -32,18 +35,21 @@ Full-featured applications combining multiple concepts.
 ## 🎯 Project Ideas
 
 ### Beginner Projects
+
 - Todo list CLI
 - Budget tracker
 - Password generator
 - Quiz game
 
 ### Intermediate Projects
+
 - Web scraper
 - API client library
 - Data dashboard
 - File organizer
 
 ### Advanced Projects
+
 - RAG system
 - ML model deployment
 - Real-time monitor
@@ -52,7 +58,8 @@ Full-featured applications combining multiple concepts.
 ---
 
 ## 🔗 Project Structure Template
-```
+
+```text
 project-name/
 ├── README.md
 ├── requirements.txt or pyproject.toml

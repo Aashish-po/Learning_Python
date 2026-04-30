@@ -5,24 +5,28 @@ Building reusable, maintainable code with classes.
 ## 📖 Topics Covered
 
 ### Classes and Objects
+
 - Class definition with `class` keyword
 - `__init__()` constructor
 - Instance attributes vs class attributes
 - `self` parameter
 
 ### Methods
+
 - Instance methods
 - Class methods (`@classmethod`)
 - Static methods (`@staticmethod`)
 - Special methods (`__str__`, `__repr__`)
 
 ### Inheritance
+
 - Creating child classes
 - Overriding methods
 - `super()` function
 - Multiple inheritance
 
 ### When to Use Classes
+
 - Classes vs functions decision framework
 - Single Responsibility Principle
 - Avoiding over-engineering
@@ -32,6 +36,7 @@ Building reusable, maintainable code with classes.
 ## 🎯 Key Concepts
 
 ### Basic Class Structure
+
 ```python
 class Student:
     """Represent a student."""
@@ -61,15 +66,17 @@ print(student1.study("Python"))
 print(student2.study("Math"))
 ```
 
-### When to Use Classes
+### Times to Use Classes
 
 ✅ **Use classes when:**
+
 - Maintaining state between operations
 - Creating multiple instances with similar behavior
 - Grouping related data and functions
 - Modeling real-world objects
 
 ❌ **Use functions when:**
+
 - Simple transformations (input → output)
 - Stateless operations
 - One-off calculations
@@ -79,6 +86,7 @@ print(student2.study("Math"))
 ## 🏋️ Exercises
 
 ### Exercise 1: Bank Account Class
+
 ```python
 # Create a BankAccount class with:
 # - owner, balance attributes
@@ -88,6 +96,7 @@ print(student2.study("Math"))
 ```
 
 ### Exercise 2: Shopping Cart
+
 ```python
 # Create classes:
 # - Product (name, price)
@@ -96,6 +105,7 @@ print(student2.study("Math"))
 ```
 
 ### Exercise 3: Student Grade System
+
 ```python
 # Create Student class with:
 # - Add grades for subjects

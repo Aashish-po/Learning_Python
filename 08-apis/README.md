@@ -16,6 +16,7 @@ Connecting Python to external services.
 ## 🎯 Key Concepts
 
 ### Making API Requests
+
 ```python
 import requests
 
@@ -32,6 +33,7 @@ response = requests.post(
 ```
 
 ### Error Handling
+
 ```python
 try:
     response = requests.get(url, timeout=10)
@@ -50,6 +52,7 @@ except requests.exceptions.RequestException as e:
 ## 🏋️ Exercises
 
 ### Exercise 1: Weather API Client
+
 ```python
 # Create a weather client that:
 # - Fetches current weather
@@ -58,6 +61,7 @@ except requests.exceptions.RequestException as e:
 ```
 
 ### Exercise 2: GitHub API Wrapper
+
 ```python
 # Create a GitHub client that:
 # - Gets user info

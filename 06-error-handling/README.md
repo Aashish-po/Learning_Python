@@ -16,6 +16,7 @@ Writing robust code that handles failures gracefully.
 ## 🎯 Key Concepts
 
 ### Basic Error Handling
+
 ```python
 # Catch specific exception
 try:
@@ -33,6 +34,7 @@ except FileNotFoundError:
 ```
 
 ### Complete Pattern
+
 ```python
 try:
     # Try something risky
@@ -49,6 +51,7 @@ finally:
 ```
 
 ### Custom Exceptions
+
 ```python
 class InvalidAgeError(Exception):
     """Raised when age is invalid."""
@@ -67,6 +70,7 @@ def set_age(age):
 ## 🏋️ Exercises
 
 ### Exercise 1: Safe Calculator
+
 ```python
 # Create a calculator that:
 # - Handles division by zero
@@ -76,6 +80,7 @@ def set_age(age):
 ```
 
 ### Exercise 2: File Processor
+
 ```python
 # Create a file processor that:
 # - Handles missing files

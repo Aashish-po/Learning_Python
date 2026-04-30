@@ -5,6 +5,7 @@ Python's built-in data structures and their usage.
 ## Topics Covered
 
 ### Lists
+
 - Creating and modifying lists
 - List indexing and slicing
 - List methods (`.append()`, `.extend()`, `.insert()`, etc.)
@@ -12,17 +13,20 @@ Python's built-in data structures and their usage.
 - Nested lists
 
 ### Dictionaries
+
 - Key-value pairs
 - Dictionary methods (`.get()`, `.keys()`, `.values()`, `.items()`)
 - Dictionary comprehensions
 - Nested dictionaries
 
 ### Sets
+
 - Unique elements
 - Set operations (union, intersection, difference)
 - Set comprehensions
 
 ### Tuples
+
 - Immutable sequences
 - Tuple unpacking
 - Named tuples
@@ -42,6 +46,7 @@ Python's built-in data structures and their usage.
 ## Key Concepts
 
 ### List Comprehensions
+
 ```python
 # Old way (verbose)
 squares = []
@@ -59,6 +64,7 @@ matrix = [[i * j for j in range(3)] for i in range(3)]
 ```
 
 ### Dictionary Power
+
 ```python
 # Safe access with .get()
 user = {"name": "Aashish", "age": 18}
@@ -87,6 +93,7 @@ merged = dict1 | dict2
 ## Exercises
 
 ### Exercise 1: List Manipulation
+
 ```python
 # Create a list of numbers 1-100
 # Filter only even numbers
@@ -96,6 +103,7 @@ merged = dict1 | dict2
 ```
 
 ### Exercise 2: Dictionary Operations
+
 ```python
 # Create a student database (dict of dicts)
 # Add students with name, age, grades
@@ -104,6 +112,7 @@ merged = dict1 | dict2
 ```
 
 ### Exercise 3: Set Operations
+
 ```python
 # Given two lists of numbers
 # Find common elements (intersection)

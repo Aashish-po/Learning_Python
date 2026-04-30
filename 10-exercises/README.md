@@ -5,18 +5,22 @@ Coding challenges and practice problems.
 ## 📁 Structure
 
 ### LeetCode Solutions
+
 **Location:** `leetcode/`
 
 Python solutions to LeetCode problems, with:
+
 - Problem description
 - Solution approach
 - Time/space complexity
 - Alternative solutions
 
 ### Practice Problems
+
 **Location:** `practice/`
 
 Custom practice problems organized by topic:
+
 - Data structures
 - Algorithms
 - OOP design
@@ -27,18 +31,21 @@ Custom practice problems organized by topic:
 ## 🎯 Exercise Categories
 
 ### Data Structures
+
 - Array manipulation
 - String processing
 - Dictionary operations
 - Set operations
 
 ### Algorithms
+
 - Sorting
 - Searching
 - Recursion
 - Dynamic programming
 
 ### Problem Solving
+
 - Pattern matching
 - Edge case handling
 - Optimization
@@ -46,6 +53,7 @@ Custom practice problems organized by topic:
 ---
 
 ## 📝 Template for Solutions
+
 ```python
 """
 Problem: [Problem Name]

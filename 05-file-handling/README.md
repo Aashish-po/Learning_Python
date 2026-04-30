@@ -18,6 +18,7 @@ Reading from and writing to files.
 ## 🎯 Key Concepts
 
 ### Context Managers (Best Practice)
+
 ```python
 # ❌ Old way (manual close)
 f = open('file.txt', 'r')
@@ -31,6 +32,7 @@ with open('file.txt', 'r') as f:
 ```
 
 ### Path Handling
+
 ```python
 from pathlib import Path
 
@@ -45,6 +47,7 @@ if data_file.exists():
 ```
 
 ### CSV Files
+
 ```python
 import csv
 
@@ -66,6 +69,7 @@ with open('output.csv', 'w', newline='') as f:
 ## 🏋️ Exercises
 
 ### Exercise 1: Text File Processor
+
 ```python
 # Read a text file
 # Count words, lines, characters
@@ -74,6 +78,7 @@ with open('output.csv', 'w', newline='') as f:
 ```
 
 ### Exercise 2: CSV Data Analysis
+
 ```python
 # Read CSV file
 # Filter rows by condition
@@ -82,6 +87,7 @@ with open('output.csv', 'w', newline='') as f:
 ```
 
 ### Exercise 3: JSON Configuration
+
 ```python
 # Create config.json
 # Read and parse

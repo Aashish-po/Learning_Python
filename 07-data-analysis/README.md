@@ -16,7 +16,9 @@ Working with data using pandas and matplotlib.
 ## 🎯 Projects
 
 ### Sales Analyzer
+
 Complete data analysis pipeline:
+
 - Load and validate CSV data
 - Clean data (remove duplicates, handle missing values)
 - Calculate metrics (revenue, top products)
@@ -30,6 +32,7 @@ Complete data analysis pipeline:
 ## 🏋️ Exercise Ideas
 
 ### Exercise 1: Weather Data Analysis
+
 ```python
 # Analyze weather data:
 # - Load from CSV
@@ -39,6 +42,7 @@ Complete data analysis pipeline:
 ```
 
 ### Exercise 2: Student Performance
+
 ```python
 # Analyze student grades:
 # - Load student data

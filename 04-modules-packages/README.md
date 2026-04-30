@@ -16,6 +16,7 @@ Organizing code into reusable modules.
 ## 🎯 Key Concepts
 
 ### Creating a Module
+
 ```python
 # my_module.py
 def greet(name):
@@ -29,6 +30,7 @@ class Calculator:
 ```
 
 ### Importing
+
 ```python
 # Different import styles
 import my_module
@@ -44,7 +46,8 @@ from my_module import *  # Avoid this!
 ```
 
 ### Package Structure
-```
+
+```text
 my_package/
 ├── __init__.py
 ├── module1.py
@@ -59,6 +62,7 @@ my_package/
 ## 🏋️ Exercises
 
 ### Exercise 1: Math Utilities Module
+
 ```python
 # Create a module with:
 # - Basic math functions
@@ -67,6 +71,7 @@ my_package/
 ```
 
 ### Exercise 2: Package Creation
+
 ```python
 # Create a package with:
 # - Multiple modules

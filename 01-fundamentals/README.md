@@ -5,12 +5,14 @@ Core Python syntax and basic concepts.
 ## 📖 Topics Covered
 
 ### Variables & Data Types
+
 - Dynamic typing vs static typing (C++/Java)
 - Type conversion and type checking
 - Mutable vs immutable types
 - Variable scope (local, global)
 
 ### Control Flow
+
 - `if/elif/else` statements
 - Comparison operators (`==`, `!=`, `<`, `>`, `<=`, `>=`)
 - Logical operators (`and`, `or`, `not`)
@@ -19,6 +21,7 @@ Core Python syntax and basic concepts.
 - `break`, `continue`, `pass`
 
 ### Functions
+
 - Function definition with `def`
 - Parameters and arguments
 - Return values
@@ -28,6 +31,7 @@ Core Python syntax and basic concepts.
 - Lambda functions
 
 ### Input/Output
+
 - `print()` function
 - `input()` for user input
 - String formatting (f-strings, `.format()`, `%`)
@@ -47,6 +51,7 @@ Core Python syntax and basic concepts.
 ## 🎯 Key Concepts
 
 ### Dynamic Typing
+
 ```python
 # Python uses dynamic typing
 x = 5           # x is an integer
@@ -59,6 +64,7 @@ x = [1, 2, 3]   # now x is a list
 ```
 
 ### Indentation Matters
+
 ```python
 # Python uses indentation for blocks
 if condition:
@@ -74,6 +80,7 @@ else:
 ```
 
 ### Everything is an Object
+
 ```python
 # Even functions are objects
 def greet():
@@ -107,6 +114,7 @@ call_function(greet)  # "Hello"
 ## 🏋️ Exercises
 
 ### Exercise 1: Variables and Types
+
 ```python
 # Create variables of different types
 # Convert between types
@@ -114,6 +122,7 @@ call_function(greet)  # "Hello"
 ```
 
 ### Exercise 2: Control Flow
+
 ```python
 # Write a program that:
 # 1. Asks user for a number
@@ -122,6 +131,7 @@ call_function(greet)  # "Hello"
 ```
 
 ### Exercise 3: Functions
+
 ```python
 # Write a function that:
 # 1. Takes a list of numbers
@@ -130,6 +140,7 @@ call_function(greet)  # "Hello"
 ```
 
 ### Exercise 4: Temperature Converter
+
 ```python
 # Create functions to convert:
 # - Celsius to Fahrenheit
@@ -151,5 +162,6 @@ call_function(greet)  # "Hello"
 ## 🚀 Next Steps
 
 After mastering fundamentals, move to:
+
 - **02-data-structures** - Lists, dicts, sets, tuples
 - **03-oop** - Classes and objects
