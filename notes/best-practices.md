@@ -5,6 +5,7 @@ Lessons learned and patterns that work.
 ## Code Style
 
 ### Naming Conventions
+
 ```python
 # Variables and functions: snake_case
 user_name = "Aashish"
@@ -29,6 +30,7 @@ class MyClass:
 ```
 
 ### Import Organization
+
 ```python
 # Standard library
 import os
@@ -49,6 +51,7 @@ from .utils import helper_function
 ## Error Handling
 
 ### Validate Early
+
 ```python
 # ❌ Bad
 def process_data(data):
@@ -69,6 +72,7 @@ def process_data(data):
 ```
 
 ### Be Specific
+
 ```python
 # ❌ Bad
 try:
@@ -90,6 +94,7 @@ except FileNotFoundError as e:
 ## Functions
 
 ### Single Responsibility
+
 ```python
 # ❌ Bad
 def process_and_save(data, filepath):
@@ -111,6 +116,7 @@ save_data(processed, filepath)
 ```
 
 ### Use Type Hints
+
 ```python
 # ❌ Without hints
 def calculate(a, b):
@@ -128,11 +134,13 @@ def calculate(a: int, b: int) -> int:
 ### When to Use
 
 ✅ **Use classes when:**
+
 - Maintaining state between operations
 - Creating multiple instances
 - Grouping related data and behavior
 
 ❌ **Don't use classes when:**
+
 - Simple transformation (use function)
 - Only one method (use function)
 - No shared state
@@ -142,6 +150,7 @@ def calculate(a: int, b: int) -> int:
 ## File Handling
 
 ### Always Use Context Managers
+
 ```python
 # ❌ Bad
 f = open('file.txt')
@@ -159,6 +168,7 @@ with open('file.txt') as f:
 ## Performance
 
 ### Use Comprehensions
+
 ```python
 # Slower
 result = []
@@ -170,6 +180,7 @@ result = [x**2 for x in range(1000)]
 ```
 
 ### Use Generators for Large Data
+
 ```python
 # Memory intensive
 def get_numbers(n):

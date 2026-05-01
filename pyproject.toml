@@ -117,6 +117,10 @@ line-ending = "auto"
 [tool.ruff.lint.isort]
 known-first-party = ["python_for_ai"]
 
+[tool.hatch.build.targets.wheel]
+packages = ["python_for_ai"]
+
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = ["test_*.py", "*_test.py"]
