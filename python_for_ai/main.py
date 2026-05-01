@@ -1,14 +1,10 @@
-"""Wrapper to run the root `main` example now stored under 01-fundamentals/project."""
-
-from pathlib import Path
-import runpy
+"""Minimal entry point for quick environment sanity checks."""
 
 
-def run():
-    root = Path(__file__).resolve().parents[1]
-    script = root / "01-fundamentals" / "project" / "main.py"
-    runpy.run_path(script, run_name="__main__")
+def main():
+    """Print a simple message so the project can be run end-to-end."""
+    print("Hello from python-for-ai!")
 
 
 if __name__ == "__main__":
-    run()
+    main()

@@ -1,14 +1,21 @@
-"""Wrapper to run the `two_sum` example moved into 10-exercises/project."""
-
-from pathlib import Path
-import runpy
+"""Two-sum example used in the exercises section."""
 
 
-def run():
-    root = Path(__file__).resolve().parents[1]
-    script = root / "10-exercises" / "project" / "two_sum.py"
-    runpy.run_path(script, run_name="__main__")
+def two_sum(nums, target):
+    """Return indices of two numbers that add up to target."""
+    seen = {}
+    for index, number in enumerate(nums):
+        difference = target - number
+        if difference in seen:
+            return [seen[difference], index]
+        seen[number] = index
+
+
+def main():
+    """Demonstrate the two-sum solution with a simple example."""
+    example = [2, 7, 11, 15]
+    print(two_sum(example, 9))
 
 
 if __name__ == "__main__":
-    run()
+    main()

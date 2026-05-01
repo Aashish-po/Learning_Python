@@ -1,14 +1,27 @@
-"""Wrapper to run the `expense_tracker` example moved into 09-projects/project."""
-
-from pathlib import Path
-import runpy
+"""Interactive expense tracker example."""
 
 
-def run():
-    root = Path(__file__).resolve().parents[1]
-    script = root / "09-projects" / "project" / "expense_tracker.py"
-    runpy.run_path(script, run_name="__main__")
+def main():
+    """Run a tiny CLI expense tracker."""
+    expenses = []
+
+    while True:
+        print("\n1. Add expense  2. View total  3. Quit")
+        choice = input("Choose: ")
+
+        if choice == "1":
+            category = input("Category: ")
+            amount = float(input("Amount: "))
+            expenses.append({"category": category, "amount": amount})
+            print("✓ Added")
+        elif choice == "2":
+            total = sum(entry["amount"] for entry in expenses)
+            print(f"Total: ${total:.2f}")
+        elif choice == "3":
+            break
+        else:
+            print("Invalid choice, try again.")
 
 
 if __name__ == "__main__":
-    run()
+    main()
