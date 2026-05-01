@@ -60,6 +60,10 @@ uv sync
 # Run any example
 uv run python 01-fundamentals/variables_example.py
 
+# Run the packaged entry points directly
+uv run python -m python_for_ai.main
+uv run python -m python_for_ai.two_sum
+
 # Run the sales analyzer project
 cd 07-data-analysis/sales_analyzer
 uv run python analyzer.py
@@ -401,22 +405,28 @@ def add_item(item, items=None):
     pass
 
 
-## Note: relocated example scripts
+## Note: packaged examples
 
-Some example scripts were reorganized into `project` subfolders for clarity:
+The canonical implementations now live in the `python_for_ai/` package.
+The numbered-folder scripts remain as thin launchers so the learning-path
+layout stays readable, while the package keeps the examples importable and
+buildable.
 
-- `01-fundamentals/project/main.py`  — minimal entrypoint (moved from repo root)
-- `07-data-analysis/project/grade_analysis.py` — grade analysis example
-- `09-projects/project/expense_tracker.py` — small expense tracker
-- `09-projects/project/notes_app.py` — simple notes app
-- `10-exercises/project/two_sum.py` — two-sum example
+Run them with:
 
-See the per-folder README.md files for run instructions.
+```bash
+uv run python -m python_for_ai.main
+uv run python -m python_for_ai.grade_analysis
+uv run python -m python_for_ai.expense_tracker
+uv run python -m python_for_ai.notes_app
+uv run python -m python_for_ai.two_sum
+```
 
-        items = []
+items = []
     items.append(item)
     return items
-```
+
+```text
 
 ---
 

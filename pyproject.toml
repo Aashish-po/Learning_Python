@@ -53,8 +53,8 @@ Homepage = "https://github.com/Aashish-po/Learning_Python"
 Repository = "https://github.com/Aashish-po/Learning_Python.git"
 "Bug Tracker" = "https://github.com/Aashish-po/Learning_Python/issues"
 
-[tool.uv]
-dev-dependencies = [
+[dependency-groups]
+dev = [
     "ruff>=0.1.0",
     "pytest>=7.4.0",
     "mypy>=1.7.0",
