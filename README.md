@@ -15,7 +15,7 @@ I'm a passionate programmer transitioning from C++ and full-stack JavaScript dev
 **Connect with me:**
 
 - 🐙 GitHub: [@Aashish-po](https://github.com/Aashish-po)
-- 💻 LeetCode: [sathi__007](https://leetcode.com/u/sathi__007/)
+- 💻 LeetCode: [aa\_\_shish_07](https://leetcode.com/sathi__007/)
 - 📧 Email: <poudelashish572@gmail.com>
 
 **My Background:**
