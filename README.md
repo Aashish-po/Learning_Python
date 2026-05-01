@@ -426,8 +426,6 @@ items = []
     items.append(item)
     return items
 
-```text
-
 ---
 
 #### ✅ Functions
