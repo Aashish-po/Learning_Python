@@ -1,4 +1,4 @@
-# grade_analyzer.py
+# grade_analysis.py
 import csv
 from statistics import mean
 

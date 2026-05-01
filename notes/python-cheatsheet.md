@@ -5,6 +5,7 @@ Quick reference for Python syntax and common patterns.
 > **Note:** This cheatsheet focuses on practical patterns I use daily, not exhaustive documentation.
 
 ## Table of Contents
+
 - [Variables & Types](#variables--types)
 - [Strings](#strings)
 - [Lists](#lists)
@@ -20,6 +21,7 @@ Quick reference for Python syntax and common patterns.
 ---
 
 ## Variables & Types
+
 ```python
 # Assignment
 name = "Aashish"
@@ -45,6 +47,7 @@ isinstance(age, int)        # True
 ---
 
 ## Strings
+
 ```python
 # Creation
 name = "Aashish"
@@ -93,6 +96,7 @@ text[::-1]                  # "nohtyP" (reverse)
 ---
 
 ## Lists
+
 ```python
 # Creation
 numbers = [1, 2, 3, 4, 5]
@@ -134,6 +138,7 @@ pairs = [(x, y) for x in range(3) for y in range(3)]
 ---
 
 ## Dictionaries
+
 ```python
 # Creation
 user = {
@@ -178,6 +183,7 @@ filtered = {k: v for k, v in user.items() if v is not None}
 ---
 
 ## Sets & Tuples
+
 ```python
 # Sets (unique, unordered)
 numbers = {1, 2, 3, 4, 5}
@@ -208,6 +214,7 @@ name, age, city = person       # Unpacking
 ---
 
 ## Control Flow
+
 ```python
 # If/elif/else
 if age < 18:
@@ -257,6 +264,7 @@ else:
 ---
 
 ## Functions
+
 ```python
 # Basic function
 def greet(name):
@@ -300,6 +308,7 @@ evens = [x for x in numbers if x % 2 == 0]
 ---
 
 ## Classes
+
 ```python
 class Person:
     """Represent a person."""
@@ -333,6 +342,7 @@ print(person)
 ---
 
 ## File I/O
+
 ```python
 # Read file
 with open('file.txt', 'r') as f:
@@ -382,6 +392,7 @@ with open('data.json', 'w') as f:
 ---
 
 ## Error Handling
+
 ```python
 # Basic try/except
 try:
@@ -423,6 +434,7 @@ if age < 0:
 ---
 
 ## Common Patterns
+
 ```python
 # Enumerate
 for i, item in enumerate(items):
@@ -476,6 +488,7 @@ with DatabaseConnection() as db:
 ## Quick Tips
 
 ### Do's
+
 ✅ Use f-strings for formatting  
 ✅ Use list comprehensions when readable  
 ✅ Use `with` for file operations  
@@ -484,6 +497,7 @@ with DatabaseConnection() as db:
 ✅ Use type hints for clarity  
 
 ### Don'ts
+
 ❌ Don't use bare `except`  
 ❌ Don't use mutable default arguments  
 ❌ Don't modify list while iterating  
@@ -492,4 +506,4 @@ with DatabaseConnection() as db:
 
 ---
 
-*Last Updated: March 2026*
+ Last Updated: March 2026

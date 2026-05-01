@@ -15,7 +15,7 @@ I'm a passionate programmer transitioning from C++ and full-stack JavaScript dev
 **Connect with me:**
 
 - 🐙 GitHub: [@Aashish-po](https://github.com/Aashish-po)
-- 💻 LeetCode: [aa\_\_shish_07](https://leetcode.com/aa__shish_07/)
+- 💻 LeetCode: [sathi__007]((https://leetcode.com/u/sathi__007/))
 - 📧 Email: <poudelashish572@gmail.com>
 
 **My Background:**
@@ -398,6 +398,21 @@ def add_item(item, items=[]):  # WRONG! Same list reused!
 # Correct: None as default
 def add_item(item, items=None):
     if items is None:
+    pass
+
+
+## Note: relocated example scripts
+
+Some example scripts were reorganized into `project` subfolders for clarity:
+
+- `01-fundamentals/project/main.py`  — minimal entrypoint (moved from repo root)
+- `07-data-analysis/project/grade_analysis.py` — grade analysis example
+- `09-projects/project/expense_tracker.py` — small expense tracker
+- `09-projects/project/notes_app.py` — simple notes app
+- `10-exercises/project/two_sum.py` — two-sum example
+
+See the per-folder README.md files for run instructions.
+
         items = []
     items.append(item)
     return items
