@@ -1,6 +1,6 @@
 """Simple API-calling examples showing direct requests and a reusable helper."""
 
-import requests  # type: ignore
+import requests  # pyright: ignore[reportMissingModuleSource]
 
 # API endpoint URL
 url = "https://api.open-meteo.com/v1/forecast"
